@@ -1,0 +1,10 @@
+img.tourImg {
+  height: 120px;
+  width: 120px;
+}
+
+div.wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
