@@ -11,7 +11,7 @@ class HomeTourList extends React.Component {
         <div class='item' key={tour.id}>
           <h3>{tour.name}</h3>
           <div>
-          <img src={tour.img} className='tourImg'/>
+          <img src={tour.img} alt='tour' className='tourImg'/>
           <p>{tour.description}</p>
           </div>
         </div>
