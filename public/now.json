@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "alias": "michaels-wander-app.now.sh",
+  "name": "wander-app",
+  "routes": [
+      { "handle": "filesystem" },
+      { "src": "/.*", "dest": "/index.html" }
+  ]
+}

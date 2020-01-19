@@ -3,7 +3,7 @@ import React from 'react'
 class Footer extends React.Component {
   render () {
     return (
-      <footer role="content-info">Footer <a href="helpdesk-link">Help?</a></footer>
+      <footer >Footer <a href="helpdesk-link">Help?</a></footer>
     );
   }
 }

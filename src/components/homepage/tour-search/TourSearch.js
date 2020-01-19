@@ -6,41 +6,41 @@ class TourSearch extends React.Component {
       <section>
         <header>
           <h3>Find a tour</h3>
-          <form class="tour-search-form">
+          <form className="tour-search-form">
             <div>
               <h4>Location</h4>
               <div>
-                <label for="city">City</label>
+                <label htmlFor="city">City</label>
                 <input placeholder='Washington' type="text" name='city' id='city' />
               </div>
               <div>
-                <label for="state">State</label>
+                <label htmlFor="state">State</label>
                 <input
                   placeholder="DC"
                   type="text"
                   name="state"
                   id="state"
-                  maxlength="2"
+                  maxLength="2"
                 />
               </div>
               <div>
                 <h4>Dates</h4>
                 <div>
-                  <label for="begin">Tour start</label>
+                  <label htmlFor="begin">Tour start</label>
                   <input type="date" name='begin' id='begin' placeholder='MM/DD/YYYY'/>
                 </div>
                 <div>
-                  <label for="end">Tour End</label>
+                  <label htmlFor="end">Tour End</label>
                   <input type="date" name='end' id='end' placeholder='MM/DD/YYYY'/>
                 </div>
                 <div>
                   {/* <input type="radio" name="group" value="group"/>
                   <input type="radio" name="private" value="private"/>  */}
-                  <label for="group">
+                  <label htmlFor="group">
                   <input type="radio" name="group" value="group"/>
                   Group Tour
                   </label> 
-                  <label for="private">
+                  <label htmlFor="private">
                   <input type="radio" name="private" value="private"/>
                   Private Tour
                   </label>
