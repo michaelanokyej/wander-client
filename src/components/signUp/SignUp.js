@@ -1,6 +1,8 @@
 import React from "react";
 import toursAndUserContext from "/Users/michael/Documents/Courses/Thinkful/projects/capstone_projects/Wander/wander-client/src/context/toursAndUserContext.js";
 import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 class SignUp extends React.Component {
   state = {
@@ -115,6 +117,7 @@ class SignUp extends React.Component {
             Sign Up
           </button>
         </form>
+        <div>Click <Link to="/login">here</Link> to login</div>
       </main>
     );
   }

@@ -4,6 +4,7 @@ import LandingPage from '../landingpage/LandingPage'
 import SignUp from '../signUp/SignUp'
 import postTour from "../postTour/postTour";
 import Login from "../logIn/LogIn";
+import TourDetailsPage from "../tourdetails/TourDetailsPage";
 import NewHomePage from "../newhomepage/NewHomePage.js";
 
 
@@ -37,6 +38,11 @@ class Mainpage extends React.Component {
           exact
           path="/login"
           component={Login}
+        />
+        <Route
+          exact
+          path="/tours/:tourId"
+          component={TourDetailsPage}
         />
       </main>
     );

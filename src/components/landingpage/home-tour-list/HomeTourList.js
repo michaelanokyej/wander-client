@@ -1,6 +1,8 @@
 import React from 'react'
 import toursAndUserContext from '/Users/michael/Documents/Courses/Thinkful/projects/capstone_projects/Wander/wander-client/src/context/toursAndUserContext.js';
 import './HomeTourList.css'
+import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 class HomeTourList extends React.Component {
@@ -9,33 +11,29 @@ class HomeTourList extends React.Component {
     console.log(this.context.tours)
     const tours = this.context.tours.map((tour, index) => {
       return (
-        <div className='item' key={index}>
-          <h3>{tour.name}</h3>
-          <div>
-          <img src={tour.img} alt='tour' className='tourImg'/>
-          <p>{tour.description}</p>
-          </div>
-        </div>
+        // <div className='item' key={index}>
+        //   <h3>{tour.name}</h3>
+        //   <div>
+        //   <img src={tour.img} alt='tour' className='tourImg'/>
+        //   <p>{tour.city}, {tour.state}</p>
+        //   </div>
+        // </div>
+
+<div className="item card" key={index}>
+<img src={tour.img} className="tourImg card-img-top" alt="tour"/>
+<div className="card-body">
+  <h5 className="card-title">{tour.name}</h5>
+  {/* <p className="card-text">{tour.description}</p> */}
+  <Link to={`/tours/${tour.id}`} className="btn btn-primary">View Tour</Link>
+</div>
+</div>
       );
     });
     return (
       <section className='tourListSection'>
-      <h4>Tours in Washington, DC</h4>
+      <h4>Tours in the United States</h4>
       <div className='wrapper'>
         {tours}
-        {/* <div class='item'>
-          <h3>{this.context.tours[0].name}</h3>
-        </div>
-        <div class='item'>
-          <h3>{this.context.tours[1].name}</h3>
-        </div>
-        <div class='item'>
-          <h3>{this.context.tours[2].name}</h3>
-          <div>
-            <img src={this.context.tours[2].img}/>
-            <p></p>
-          </div>
-        </div> */}
       </div>
 		</section>
     );

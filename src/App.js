@@ -20,7 +20,7 @@ class App extends React.Component {
     }
  console.log(newUser)
     // Post note
-    fetch(`http://localhost:8000/api/users`, {
+    fetch(`https://pacific-sands-75155.herokuapp.com/api/users`, {
       method: "POST",
       headers: new Headers({
         "Content-Type": "application/json",
@@ -61,7 +61,7 @@ class App extends React.Component {
     }
  console.log(newTour)
     // Post note
-    fetch(`http://localhost:8000/api/tours`, {
+    fetch(`https://pacific-sands-75155.herokuapp.com/api/tours`, {
       method: "POST",
       headers: new Headers({
         "Content-Type": "application/json",
@@ -89,7 +89,7 @@ class App extends React.Component {
     //   })
     // };
 
-    fetch(`http://localhost:8000/api/tours`, {
+    fetch(`https://pacific-sands-75155.herokuapp.com/api/tours`, {
       method: "Get",
       headers: new Headers({
         "Content-Type": "application/json",
