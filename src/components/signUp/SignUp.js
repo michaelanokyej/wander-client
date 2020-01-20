@@ -1,6 +1,6 @@
 import React from "react";
 import toursAndUserContext from "/Users/michael/Documents/Courses/Thinkful/projects/capstone_projects/Wander/wander-client/src/context/toursAndUserContext.js";
-
+import { Redirect } from "react-router-dom";
 
 class SignUp extends React.Component {
   state = {
@@ -29,6 +29,7 @@ class SignUp extends React.Component {
 
     return (
       <main>
+        {this.state.routeToHome && <Redirect to="/home" />}
         <header role="banner">
           <h2>Sign Up!</h2>
         </header>
@@ -107,6 +108,7 @@ class SignUp extends React.Component {
               }
                else {
                 this.context.signUp(userInfo);
+                this.setState({ routeToHome: true });
               }
             }}
           >

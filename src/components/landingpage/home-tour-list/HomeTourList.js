@@ -6,9 +6,10 @@ import './HomeTourList.css'
 class HomeTourList extends React.Component {
   static contextType = toursAndUserContext;
   render() {
+    console.log(this.context.tours)
     const tours = this.context.tours.map((tour, index) => {
       return (
-        <div className='item' key={tour.id}>
+        <div className='item' key={index}>
           <h3>{tour.name}</h3>
           <div>
           <img src={tour.img} alt='tour' className='tourImg'/>

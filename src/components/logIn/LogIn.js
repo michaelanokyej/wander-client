@@ -20,7 +20,7 @@ class Login extends React.Component {
     return (
       <main>
          <header role="banner">
-			  <h2>Welcme Back!</h2>
+			  <h2>Welcome Back!</h2>
         <h4>Please log in</h4>
 		    </header>
       <form className='signup-form'>

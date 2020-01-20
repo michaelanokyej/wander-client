@@ -1,9 +1,12 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import Homepage from '../homepage/Homepage'
+import LandingPage from '../landingpage/LandingPage'
 import SignUp from '../signUp/SignUp'
 import postTour from "../postTour/postTour";
 import Login from "../logIn/LogIn";
+import NewHomePage from "../newhomepage/NewHomePage.js";
+
+
 
 
 class Mainpage extends React.Component {
@@ -13,7 +16,12 @@ class Mainpage extends React.Component {
         <Route
           exact
           path="/"
-          component={Homepage}
+          component={LandingPage}
+        />
+        <Route
+          exact
+          path="/home"
+          component={NewHomePage}
         />
         <Route
           exact

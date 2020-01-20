@@ -6,9 +6,10 @@ const Tours = [
     'description': 'lorem ipsumhkjgsfdbkjh vdbhudi',
     'city': 'Washington',
     'state': 'DC',
-    'country': 'USA',
-    'max': '2',
-    'policies': 'Check-in 30 minutes before tour start'
+    'max_tourists': '2',
+    'policies': 'Check-in 30 minutes before tour start',
+    'guide_username': 'michaelanokyej@yahoo.com',
+    'guide_id': 1
   },
   {
     'id': '2',
@@ -17,9 +18,10 @@ const Tours = [
     'description': 'lorem ipsumhkjgsfdbkjh vdbhudi',
     'city': 'Washington',
     'state': 'DC',
-    'country': 'USA',
-    'max': '10',
-    'policies': 'Check-in flexible'
+    'max_tourists': '10',
+    'policies': 'Check-in flexible',
+    'guide_username': 'michaelanokyej@yahoo.com',
+    'guide_id': 1
   },
   {
     'id': '3',
@@ -28,9 +30,10 @@ const Tours = [
     'description': 'lorem ipsumhkjgsfdbkjh vdbhudi',
     'city': 'Washington',
     'state': 'DC',
-    'country': 'USA',
-    'max': '1',
-    'policies': 'Check-in 30 minutes before tour start'
+    'max_tourists': '1',
+    'policies': 'Check-in 30 minutes before tour start',
+    'guide_username': 'michaelanokyej@yahoo.com',
+    'guide_id': 1
   }
 ]
 
