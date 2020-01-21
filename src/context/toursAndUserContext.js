@@ -4,7 +4,9 @@ const toursAndUserContext = React.createContext({
   signUp: () => {},
   logIn: () => {},
   postTour: () => {},
-  tours: []
+  tours: [],
+  drawerToggleClickHandler: () => {},
+  backDropClickHandler: () => {}
 });
 
 export default toursAndUserContext;

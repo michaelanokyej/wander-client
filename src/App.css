@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+.App__main {
+  margin-top: 56px;
+}
+
 body {
   font-family: "Open Sans",
   sans-serif;
@@ -11,9 +15,9 @@ body {
   line-height: 1.5;
 }
 
-header {
+/* header {
   padding: 45px 15px;
-}
+} */
 
 section {
   min-height: 200px;
