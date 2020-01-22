@@ -10,9 +10,9 @@ class TourDetailsPage extends React.Component {
   render () {
     const id = this.props.match.params.tourId;
     const tour = this.context.tours.find(el => el.id === id);
-    console.log("id", id)
-    console.log("context", this.context)
-    console.log("selected tour", tour)
+    // console.log("id", id)
+    // console.log("context", this.context)
+    // console.log("selected tour", tour)
 
     if (!tour) {
       return (
