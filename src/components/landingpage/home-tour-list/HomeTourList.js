@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 class HomeTourList extends React.Component {
   static contextType = toursAndUserContext;
   render() {
-    console.log(this.context.tours);
+    // console.log(this.context.tours);
     const tours = this.context.tours.map((tour, index) => {
       return (
         <div className="item card" key={index}>

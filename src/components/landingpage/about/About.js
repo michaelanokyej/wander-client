@@ -8,7 +8,7 @@ class About extends React.Component {
         <p>
           {" "}
           Traveling within the same country or to a foreign country for the
-          first first time can be extremely challenging; where to go, how to get
+          first time can be extremely challenging; where to go, how to get
           there, what to eat, hot places to visit of historical significance or
           contemporary architecture; how safe to travel alone-avoiding high
           security risk zones, the local language, and culture etc.{" "}

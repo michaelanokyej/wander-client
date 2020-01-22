@@ -33,7 +33,7 @@ class App extends React.Component {
       email: userInfo.email,
       password: userInfo.password,
     }
- console.log(newUser)
+//  console.log(newUser)
     // Post note
 
     
@@ -45,14 +45,14 @@ class App extends React.Component {
       body: JSON.stringify(newUser)
     })
       .then(res => {
-        console.log("newUser", newUser.id)
         // if(!res.ok){
         //   return res.json().then(e => Promise.reject(e))
         // } 
         return res.json()
       }).then(
         res => {
-          console.log(res)
+          // console.log("newUser", res.id)
+
           this.fetchTours();
         }
       )
@@ -80,7 +80,7 @@ class App extends React.Component {
       policies: tourInfo.policies,
       guide_username: tourInfo.guide_username,
     }
- console.log(newTour)
+//  console.log(newTour)
     // Post note
     fetch(`https://pacific-sands-75155.herokuapp.com/api/tours`, {
       method: "POST",
@@ -90,12 +90,12 @@ class App extends React.Component {
       body: JSON.stringify(newTour)
     })
       .then(res => {
-        console.log("newUser", newTour.id)
-        console.log("added user", res)
+        // console.log("newUser", newTour.id)
+        // console.log("added user", res)
         if(!res.ok){
           return res.json().then(e => Promise.reject(e))
         } 
-        // this.fetchNotes();
+        this.fetchTours();
       })
       .catch(err => {
         console.error({err})

@@ -54,12 +54,13 @@ class postTour extends React.Component {
           <div>
             <label htmlFor="state">State</label>
             <input type="text" name="state" id="state" placeholder="DC" 
+              maxLength="2" 
               onChange={e => this.setState({ state: e.target.value })}
               />
           </div>
           <div>
             <label htmlFor="img">Tour Image</label>
-            <input placeholder="Tour Image" type="text" name="img" id="img" 
+            <input placeholder="link to image" type="text" name="img" id="img" 
               onChange={e => this.setState({ img: e.target.value })}
               />
           </div>
