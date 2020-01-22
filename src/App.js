@@ -9,6 +9,7 @@ import './App.css'
 class App extends React.Component {
   state = {
     loggedIn: false,
+    userId: "",
     tours: [],
     sideDrawerOpen: false
   };

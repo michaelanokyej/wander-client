@@ -8,18 +8,21 @@ class NavBar extends React.Component {
     return (
       <header className="toolbar">
         <nav className="toolbar__navigation">
-          <div className="toolbar__toggle-button">
+          {/* <div className="toolbar__toggle-button">
             <DrawerToggleButton click={this.props.drawerClickHandler}/>
-          </div>
+          </div> */}
           <div className="toolbar__logo"><Link to="/"><img src="IMG_2340.png" alt="logo"/></Link></div>
           <div className="spacer" />
           <div className="toolbar_navigation_items">
             <ul>
               <li><Link to="/home">Home</Link></li>
               <li><Link to="/signup">Sign Up</Link></li>
-              <li><Link to="/login">Log In</Link></li>
               <li><Link to="/post-a-tour">Post Tour</Link></li>
+              <li><Link to="/users/:userId">Profile</Link></li>
             </ul>
+          </div>
+          <div className="toolbar__toggle-button">
+            <DrawerToggleButton click={this.props.drawerClickHandler}/>
           </div>
         </nav>
       </header>

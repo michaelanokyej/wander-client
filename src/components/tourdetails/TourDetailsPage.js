@@ -8,18 +8,44 @@ class TourDetailsPage extends React.Component {
   static contextType = toursAndUserContext;
 
   render () {
-    const id = Number(this.props.match.params.noteId);
+    const id = this.props.match.params.tourId;
     const tour = this.context.tours.find(el => el.id === id);
+    console.log("id", id)
+    console.log("context", this.context)
+    console.log("selected tour", tour)
 
     if (!tour) {
       return (
         <div>
-          <h1>404</h1>
+          <h1>Error 404</h1>
         </div>
       );
     }
     return (
-      <h1>Hello World</h1>
+      <section className="tourPage">
+        <div className="tour">
+          <h2 className="tour__title">
+            <Link to={`/tours/${tour.id}`}>{tour.name}</Link>
+          </h2>
+          <img src={tour.img} alt="tour" />
+          <p>{tour.city},{tour.state}</p>
+
+          
+        <div className="NotePageMain__content">
+          {tour.description.split(/\n \r|\n/)}
+        </div>
+        <div className="Note__dates">
+            <div className="Note__dates-modified">
+              Posted on{" "}
+              <span className="Date">
+                {format(new Date(tour.posted), "dd MMM yyyy")}
+              </span>
+            </div>
+          </div>
+        </div>
+        <RemoveButton id={tour.id} />
+
+      </section>
     )
   }
 }

@@ -33,9 +33,7 @@ class TourSearch extends React.Component {
                   <label htmlFor="end">Tour End</label>
                   <input type="date" name='end' id='end' placeholder='MM/DD/YYYY'/>
                 </div>
-                <div>
-                  {/* <input type="radio" name="group" value="group"/>
-                  <input type="radio" name="private" value="private"/>  */}
+                {/* <div>
                   <label htmlFor="group">
                   <input type="radio" name="group" value="group"/>
                   Group Tour
@@ -44,7 +42,7 @@ class TourSearch extends React.Component {
                   <input type="radio" name="private" value="private"/>
                   Private Tour
                   </label>
-                </div>
+                </div> */}
               </div>
             </div>
             <button type='submit'>Find A Tour</button>

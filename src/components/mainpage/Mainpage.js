@@ -5,6 +5,7 @@ import SignUp from '../signUp/SignUp'
 import postTour from "../postTour/postTour";
 import Login from "../logIn/LogIn";
 import TourDetailsPage from "../tourdetails/TourDetailsPage";
+import UserProfile from "../userprofile/UserProfile";
 import NewHomePage from "../newhomepage/NewHomePage.js";
 
 
@@ -23,6 +24,11 @@ class Mainpage extends React.Component {
           exact
           path="/home"
           component={NewHomePage}
+        />
+        <Route
+          exact
+          path="/users/:userId"
+          component={UserProfile}
         />
         <Route
           exact
