@@ -9,10 +9,11 @@ class Homepage extends React.Component {
   render() {
     return (
       <main>
-        <header role="banner">
+        <div className="banner">
+       {/* <img src="banner3.jpg" alt="logo" className="banner__background"/> */}
 			  <h1>Wander</h1>
         <h4>Tour like a local</h4>
-		    </header>
+		    </div>
         <About />
         {/* <TourSearch /> */}
         <HomeTourList />

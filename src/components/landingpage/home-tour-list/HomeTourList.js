@@ -24,7 +24,7 @@ class HomeTourList extends React.Component {
     });
     return (
       <section className="tourListSection">
-        <h4>Tours in the United States</h4>
+        <h4>Browse tours in the United States</h4>
         <div className="wrapper">{tours}</div>
       </section>
     );

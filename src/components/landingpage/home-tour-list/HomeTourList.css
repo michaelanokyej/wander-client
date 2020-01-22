@@ -1,3 +1,7 @@
+.tourListSection {
+  background: whitesmoke;
+}
+
 div.wrapper {
   display: grid;
   width: 90%;

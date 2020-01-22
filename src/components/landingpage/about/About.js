@@ -1,4 +1,5 @@
 import React from "react";
+import "./About.css";
 
 class About extends React.Component {
   render() {
@@ -22,7 +23,7 @@ class About extends React.Component {
           Users can choose a guide based on their ratings and expertise of all
           available professionally profiled local guides at any given
           destination. Best places to visit are curated for the pleasure of the
-          tourists. ratings and comments for places visited, guides after each
+          tourists. Ratings and comments for places visited, guides after each
           trip is used to improve our service .{" "}
         </p>
 

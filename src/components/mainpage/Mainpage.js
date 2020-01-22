@@ -7,6 +7,7 @@ import Login from "../logIn/LogIn";
 import TourDetailsPage from "../tourdetails/TourDetailsPage";
 import UserProfile from "../userprofile/UserProfile";
 import NewHomePage from "../newhomepage/NewHomePage.js";
+import "./Mainpage.css"
 
 
 

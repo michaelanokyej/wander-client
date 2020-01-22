@@ -22,14 +22,14 @@ body {
 section {
   min-height: 200px;
   padding: 30px 15px;
-  background-color: #bbb;
+  /* background-color: #bbb; */
   border-radius: 3px;
   margin-bottom: 5px;
 }
 
-section:nth-child(even) {
+/* section:nth-child(even) {
   background-color: #ddd;
-}
+} */
 
 p {
   margin: 0 auto;
