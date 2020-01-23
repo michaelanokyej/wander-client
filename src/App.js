@@ -9,7 +9,8 @@ import './App.css'
 class App extends React.Component {
   state = {
     loggedIn: false,
-    userId: "",
+    userName: "",
+    token: "",
     tours: [],
     sideDrawerOpen: false
   };
@@ -80,11 +81,38 @@ class App extends React.Component {
   };
 
   logIn = userInfo => {
-    const newUser = {
+    const user = {
       email: userInfo.email,
       password: userInfo.password,
     }
- console.log(newUser)
+//  console.log(user)
+//  https://pacific-sands-75155.herokuapp.com/api/auth/login
+ fetch(`http://localhost:8000/api/auth/login`, {
+      method: "POST",
+      headers: new Headers({
+        "Content-Type": "application/json",
+      }),
+      body: JSON.stringify(user)
+    })
+      .then(res => {
+        // if(!res.ok){
+        //   return res.json().then(e => Promise.reject(e))
+        // } 
+        return res.json()
+      }).then(
+        res => {
+          this.setState({token: res.token, userName: user.email})
+          // console.log("token", res.token)
+          // console.log("token in state", this.state.token)
+          console.log("username in state", this.state.userName)
+
+
+          this.fetchTours();
+        }
+      )
+      .catch(err => {
+        console.error({err})
+      });
   }
 
   postTour = tourInfo => {
@@ -162,7 +190,8 @@ class App extends React.Component {
       tours: this.state.tours,
       drawerToggleClickHandler: this.drawerToggleClickHandler,
       backDropClickHandler: this.backDropClickHandler,
-      deleteTour: this.deleteTour
+      deleteTour: this.deleteTour,
+      userName: this.state.userName
     };
     return (
       <div style={{height: '100%'}}>

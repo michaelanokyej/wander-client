@@ -1,5 +1,6 @@
 import React from 'react'
 import toursAndUserContext from "/Users/michael/Documents/Courses/Thinkful/projects/capstone_projects/Wander/wander-client/src/context/toursAndUserContext.js";
+import { Redirect } from "react-router-dom";
 
 
 class Login extends React.Component {
@@ -19,6 +20,7 @@ class Login extends React.Component {
 
     return (
       <main>
+        {this.state.routeToHome && <Redirect to="/home" />}
          <header role="banner">
 			  <h2>Welcome Back!</h2>
         <h4>Please log in</h4>
@@ -49,6 +51,7 @@ class Login extends React.Component {
           }
            else {
             this.context.logIn(userInfo);
+            this.setState({ routeToHome: true });
           }
         }}
         >Log in</button>
