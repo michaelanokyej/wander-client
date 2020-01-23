@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { format } from "date-fns";
 import toursAndUserContext from '/Users/michael/Documents/Courses/Thinkful/projects/capstone_projects/Wander/wander-client/src/context/toursAndUserContext.js';
-import RemoveButton from "../removebutton/RemoveButton";
+// import RemoveButton from "../removebutton/RemoveButton";
 
 class TourDetailsPage extends React.Component {
   static contextType = toursAndUserContext;
@@ -24,11 +24,17 @@ class TourDetailsPage extends React.Component {
     return (
       <section className="tourPage">
         <div className="tour">
-          <h2 className="tour__title">
+          <div className="tour__title">
+          <h2 >
             <Link to={`/tours/${tour.id}`}>{tour.name}</Link>
           </h2>
-          <img src={tour.img} alt="tour" />
+          </div> 
+          <div className="tourImage">
+          <img src={tour.img} alt="tour"/>
+          </div>
+          <div className="tour__description">
           <p>{tour.city},{tour.state}</p>
+          </div>
 
           
         <div className="NotePageMain__content">
@@ -43,7 +49,7 @@ class TourDetailsPage extends React.Component {
             </div>
           </div>
         </div>
-        <RemoveButton id={tour.id} />
+        {/* <RemoveButton id={tour.id} /> */}
 
       </section>
     )

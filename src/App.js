@@ -14,6 +14,24 @@ class App extends React.Component {
     sideDrawerOpen: false
   };
 
+   // function to delete tours
+   deleteTour = tourId => {
+    const options = {
+      method: "Delete",
+      headers: new Headers({
+        "Content-Type": "application/json",
+      })
+    };
+
+    fetch(`https://pacific-sands-75155.herokuapp.com/api/tours/${tourId}`, options)
+      .then(res => {
+        this.setState({ tours: this.state.tours.filter(n => n.id !== tourId) });
+      })
+      .catch(err => {
+        this.setState({ tours: this.props.store.tours });
+      });
+  };
+
   // handle toggle click 
   drawerToggleClickHandler = () => {
     this.setState(prevState => {
@@ -143,7 +161,8 @@ class App extends React.Component {
       postTour: this.postTour,
       tours: this.state.tours,
       drawerToggleClickHandler: this.drawerToggleClickHandler,
-      backDropClickHandler: this.backDropClickHandler
+      backDropClickHandler: this.backDropClickHandler,
+      deleteTour: this.deleteTour
     };
     return (
       <div style={{height: '100%'}}>

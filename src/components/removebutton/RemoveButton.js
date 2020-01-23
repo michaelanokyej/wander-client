@@ -7,15 +7,15 @@ class RemoveButton extends React.Component {
   static contextType = toursAndUserContext;
 
   render () {
-    // const id = this.props.id;
+    const id = this.props.id;
 
     return (
       <button
         className="Note__delete"
         type="button"
-        // onClick={() => {
-        //   this.context.deleteTour(id);
-        // }}
+        onClick={() => {
+          this.context.deleteTour(id);
+        }}
       >
         {/* This links to the root  */}
         <Link to="/">remove</Link>
