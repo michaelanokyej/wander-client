@@ -87,7 +87,7 @@ class App extends React.Component {
     }
 //  console.log(user)
 //  https://pacific-sands-75155.herokuapp.com/api/auth/login
- fetch(`http://localhost:8000/api/auth/login`, {
+ fetch(`https://pacific-sands-75155.herokuapp.com/api/auth/login`, {
       method: "POST",
       headers: new Headers({
         "Content-Type": "application/json",
