@@ -1,7 +1,7 @@
 import React from "react";
 import TourSearch from '../landingpage/tour-search/TourSearch'
 import HomeTourList from '../landingpage/home-tour-list/HomeTourList'
-import Footer from '../landingpage/footer/Footer'
+// import Footer from '../footer/Footer'
 
 class NewHomePage extends React.Component {
   render() {
@@ -13,7 +13,6 @@ class NewHomePage extends React.Component {
 		    </header>
         <TourSearch />
         <HomeTourList />
-        <Footer />
       </main>
     );
   }

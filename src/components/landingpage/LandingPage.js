@@ -2,7 +2,6 @@ import React from "react";
 import About from './about/About'
 // import TourSearch from './tour-search/TourSearch'
 import HomeTourList from './home-tour-list/HomeTourList'
-import Footer from './footer/Footer'
 import './LandingPage.css'
 
 class Homepage extends React.Component {
@@ -17,7 +16,6 @@ class Homepage extends React.Component {
         <About />
         {/* <TourSearch /> */}
         <HomeTourList />
-        <Footer />
       </main>
     );
   }

@@ -4,6 +4,7 @@ import Mainpage from './components/mainpage/Mainpage'
 import toursAndUserContext from './context/toursAndUserContext';
 import SideDrawer from './components/sidedrawer/SideDrawer';
 import BackDrop from './components/backdrop/BackDrop';
+import Footer from './components/footer/Footer'
 import './App.css'
 
 class App extends React.Component {
@@ -200,6 +201,7 @@ class App extends React.Component {
           <SideDrawer show={this.state.sideDrawerOpen}/>
           {backDrop}
           <Mainpage />
+          <Footer />
         </toursAndUserContext.Provider>
       </div>
     );
