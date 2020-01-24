@@ -55,8 +55,8 @@ class App extends React.Component {
     }
  console.log(newUser)
     // Post note
+    // http://localhost:8000/api/users
 
-    
     fetch(`https://pacific-sands-75155.herokuapp.com/api/users`, {
       method: "POST",
       headers: new Headers({
@@ -72,7 +72,12 @@ class App extends React.Component {
       }).then(
         res => {
           // console.log("newUser", res.id)
-
+          const user = {
+            email: res.email,
+      password: res.password,
+          }
+          // console.log("user login info", user)
+          this.logIn(user)
           this.fetchTours();
         }
       )
@@ -86,8 +91,8 @@ class App extends React.Component {
       email: userInfo.email,
       password: userInfo.password,
     }
-//  console.log(user)
-//  https://pacific-sands-75155.herokuapp.com/api/auth/login
+//  console.log("user in login", user)
+    // http://localhost:8000/api/auth/login
  fetch(`https://pacific-sands-75155.herokuapp.com/api/auth/login`, {
       method: "POST",
       headers: new Headers({
