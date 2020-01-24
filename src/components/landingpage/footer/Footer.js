@@ -3,7 +3,7 @@ import React from 'react'
 class Footer extends React.Component {
   render () {
     return (
-      <footer >Footer <a href="helpdesk-link">Help?</a></footer>
+      <footer >© Michael Anokye - More <a href="https://github.com/michaelanokyej">projects</a></footer>
     );
   }
 }

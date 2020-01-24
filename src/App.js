@@ -52,7 +52,7 @@ class App extends React.Component {
       email: userInfo.email,
       password: userInfo.password,
     }
-//  console.log(newUser)
+ console.log(newUser)
     // Post note
 
     
