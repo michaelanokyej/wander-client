@@ -2,10 +2,22 @@ import React from "react";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
 import DrawerToggleButton from "../sidedrawer/DrawerToggleButton";
-import toursAndUserContext from "/Users/michael/Documents/Courses/Thinkful/projects/capstone_projects/Wander/wander-client/src/context/toursAndUserContext.js";
+import toursAndUserContext from "../context/toursAndUserContext.js";
 
 class NavBar extends React.Component {
   static contextType = toursAndUserContext;
+
+  // state = {
+  //   disabled: ""
+  // }
+
+  // disableLink = () => {
+  //   if(!this.context.loggedIn) {
+  //     this.setState({
+  //       disabled: "disabled"
+  //     });
+  //   }
+  // }
 
   render() {
     return (
@@ -22,21 +34,27 @@ class NavBar extends React.Component {
           <div className="spacer" />
           <div className="toolbar_navigation_items">
             <ul>
-              <li>
-                <Link to="/home">Home</Link>
-              </li>
-              <li>
-                <Link to="/signup">Sign Up</Link>
-              </li>
-              <li>
-                <Link to="/post-a-tour">Post Tour</Link>
-              </li>
-              <li>
-                {" "}
-                <Link to="/users/:username">
-                  {this.context.userName || "Profile"}
-                </Link>
-              </li>
+              {this.context.loggedIn ? (
+                <>
+                  <li>
+                    <Link to="/home">Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/post-a-tour">Post Tour</Link>
+                  </li>
+
+                  <li>
+                    {" "}
+                    <Link to="/users/:username">
+                      {this.context.userName || "Profile"}
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <li>
+                  <Link to="/signup">Sign Up</Link>
+                </li>
+              )}
             </ul>
           </div>
           <div className="toolbar__toggle-button">

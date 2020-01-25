@@ -1,7 +1,6 @@
 import React from "react";
 import About from './about/About'
-// import TourSearch from './tour-search/TourSearch'
-import HomeTourList from './home-tour-list/HomeTourList'
+import HomeTourList from '../home-tour-list/HomeTourList'
 import './LandingPage.css'
 
 class Homepage extends React.Component {
@@ -14,7 +13,6 @@ class Homepage extends React.Component {
         <h4>Tour like a local</h4>
 		    </div>
         <About />
-        {/* <TourSearch /> */}
         <HomeTourList />
       </main>
     );

@@ -1,5 +1,5 @@
 import React from 'react'
-import toursAndUserContext from "/Users/michael/Documents/Courses/Thinkful/projects/capstone_projects/Wander/wander-client/src/context/toursAndUserContext.js";
+import toursAndUserContext from "../context/toursAndUserContext.js";
 import { Redirect } from "react-router-dom";
 
 

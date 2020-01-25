@@ -1,0 +1,72 @@
+.tourSearchSection {
+  width: 100%;
+  height: 30vh;
+  background: url(banner2.jpg);
+  background-size: cover;
+}
+
+.search {
+  position: relative;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  padding: 20px 0 20px 60px;
+  min-height: 60px;
+  width: 80%;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+}
+
+.search .icon {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  font-size: 30px;
+  color: #adadad;
+}
+
+.search div.row {
+  display: flex;
+}
+
+.search div.row .inputDiv {
+  flex: 1;
+  position: relative;
+  padding: 0;
+  border-right: 1px solid #ccc;
+}
+
+.search div.row .inputDiv input {
+  position: relative;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  color: #848484;
+  padding: 10px 20px;
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+.search div.row .inputDiv:last-child{
+  padding: 0 20px;
+  border-right: none;
+  /* box-sizing: border-box; */
+}
+
+.search div.row .inputDiv input[type="submit"] {
+  border: none;
+  background: #17cf7b;
+  height: 100%;
+  width: 100%;
+  text-transform: uppercase;
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search div.row .inputDiv input[type="submit"]:hover {
+  background-color: whitesmoke;
+  color: #17cf7b;
+}

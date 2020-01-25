@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { format } from "date-fns";
-import toursAndUserContext from '/Users/michael/Documents/Courses/Thinkful/projects/capstone_projects/Wander/wander-client/src/context/toursAndUserContext.js';
+import toursAndUserContext from '../context/toursAndUserContext.js';
 // import RemoveButton from "../removebutton/RemoveButton";
 
 class TourDetailsPage extends React.Component {

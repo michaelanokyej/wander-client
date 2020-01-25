@@ -1,8 +1,9 @@
 import React from "react";
-import toursAndUserContext from "/Users/michael/Documents/Courses/Thinkful/projects/capstone_projects/Wander/wander-client/src/context/toursAndUserContext.js";
+import toursAndUserContext from "../context/toursAndUserContext.js";
 import { Redirect } from "react-router-dom";
+import "./PostTour.css";
 
-class postTour extends React.Component {
+class PostTour extends React.Component {
   state = {
     name: "",
     city: "",
@@ -25,78 +26,124 @@ class postTour extends React.Component {
       max_tourists: this.state.max_tourists,
       img: this.state.img,
       policies: this.state.policies,
-      guide_username: this.state.guide_username,
+      guide_username: this.state.guide_username
     };
 
     return (
-      <main>
+      <main className="post-tour-body">
         {this.state.routeToHome && <Redirect to="/home" />}
         <header role="banner">
           <h2>Post a tour!</h2>
         </header>
         <form className="signup-form">
-          <div>
-            <label htmlFor="name">Tour Name</label>
+          <div className="div_form">
             <input
+              required
               type="text"
               name="name"
               id="name"
-              placeholder="White House Tour"
+              // placeholder="White House Tour"
               onChange={e => this.setState({ name: e.target.value })}
             />
-            </div>
-          <div>
-            <label htmlFor="city">city</label>
-            <input placeholder="Washington" type="text" name="city" id="city" 
-              onChange={e => this.setState({ city: e.target.value })}
-              />
+            <label htmlFor="name" className="label-name">
+              <span className="content-name">Tour Name</span>
+            </label>
           </div>
-          <div>
-            <label htmlFor="state">State</label>
-            <input type="text" name="state" id="state" placeholder="DC" 
-              maxLength="2" 
-              onChange={e => this.setState({ state: e.target.value })}
-              />
-          </div>
-          <div>
-            <label htmlFor="img">Tour Image</label>
-            <input placeholder="link to image" type="text" name="img" id="img" 
-              onChange={e => this.setState({ img: e.target.value })}
-              />
-          </div>
-          <div>
-            <label htmlFor="max_tourists">Max Capacity</label>
-            <input type="number" name="max_tourists" id="max_tourists" placeholder="1" 
-              onChange={e => this.setState({ max_tourists: e.target.value })}
-              />
-          </div>
-          <div>
-            <label htmlFor="policies">Policies</label>
+          <div className="div_form">
             <input
+              required
+              // placeholder="Washington"
+              type="text"
+              name="city"
+              id="city"
+              onChange={e => this.setState({ city: e.target.value })}
+            />
+            <label htmlFor="city" className="label-name">
+              <span className="content-name">city</span>
+            </label>
+          </div>
+          <div className="div_form">
+            <input
+              required
+              type="text"
+              name="state"
+              id="state"
+              // placeholder="DC"
+              maxLength="2"
+              onChange={e => this.setState({ state: e.target.value })}
+            />
+            <label htmlFor="state" className="label-name">
+              <span className="content-name">State</span>
+            </label>
+          </div>
+          <div className="div_form">
+            <input
+              required
+              // placeholder="link to image"
+              type="text"
+              name="img"
+              id="img"
+              onChange={e => this.setState({ img: e.target.value })}
+            />
+            <label htmlFor="img" className="label-name">
+              <span className="content-name">Tour Image</span>
+            </label>
+          </div>
+          <div className="div_form">
+            <input
+              required
+              type="number"
+              name="max_tourists"
+              id="max_tourists"
+              // placeholder="1"
+              onChange={e => this.setState({ max_tourists: e.target.value })}
+            />
+            <label htmlFor="max_tourists" className="label-name">
+              <span className="content-name">Max Capacity</span>
+            </label>
+          </div>
+          <div className="div_form">
+            <input
+              required
               type="text"
               name="policies"
               id="policies"
-              placeholder="Check in 30 minutes before tour start"
+              // placeholder="Check in 30 minutes before tour start"
               onChange={e => this.setState({ policies: e.target.value })}
             />
+            <label htmlFor="policies" className="label-name">
+              <span className="content-name">Policies</span>
+            </label>
           </div>
-          <div>
-            <label htmlFor="description">Tour Description</label>
-            <textarea rows="2" cols="50"
+          <div className="div_form">
+            <input
+              required
+              // rows="2"
+              // cols="22"
               name="description"
               id="description"
-              placeholder="say something about tour"
+              // placeholder="say something about tour"
               onChange={e => this.setState({ description: e.target.value })}
-              /> 
-          </div>
-          <div>
-            <label htmlFor="guide_username">Username</label>
-            <input type="email" name="guide_username" id="guide_username" 
-            placeholder="username/email" 
-            onChange={e => this.setState({ guide_username: e.target.value })}
             />
+            <label htmlFor="description" className="label-name">
+              <span className="content-name">Tour Description</span>
+            </label>
+          </div>
+          <div className="div_form">
+            <input
+              required
+              type="email"
+              name="guide_username"
+              id="guide_username"
+              // placeholder="username/email"
+              onChange={e => this.setState({ guide_username: e.target.value })}
+            />
+            <label htmlFor="guide_username" className="label-name">
+              <span className="content-name">Username/Email</span>
+            </label>
           </div>
           <button
+          className="post-tour-button"
             type="submit"
             onClick={e => {
               e.preventDefault();
@@ -104,39 +151,31 @@ class postTour extends React.Component {
               if (tourInfo.name.length === 0) {
                 window.alert("tour name cannot be empty");
               } else if (tourInfo.city.length === 0) {
-                window.alert(
-                  "tour city cannot be empty"
-                );
-              }
-              else if (tourInfo.state.length === 0) {
-                window.alert(
-                  "tour state cannot be empty"
-                );
+                window.alert("tour city cannot be empty");
+              } else if (tourInfo.state.length === 0) {
+                window.alert("tour state cannot be empty");
               } else if (tourInfo.description.length === 0) {
                 window.alert("tour description cannot be empty");
-              }
-              else if (tourInfo.max_tourists.length === 0) {
+              } else if (tourInfo.max_tourists.length === 0) {
                 window.alert("max_tourists cannot be 0");
-              }
-              else if (tourInfo.img.length === 0) {
+              } else if (tourInfo.img.length === 0) {
                 window.alert("Tour image cannot be empty");
-              }
-              else if (tourInfo.policies.length === 0) {
+              } else if (tourInfo.policies.length === 0) {
                 window.alert("Tour policies must be entered");
-              }
-              else if (tourInfo.guide_username.length === 0) {
+              } else if (tourInfo.guide_username.length === 0) {
                 window.alert("guide username must be entered");
-              }
-               else {
+              } else {
                 this.context.postTour(tourInfo);
                 this.setState({ routeToHome: true });
               }
             }}
-          >Post tour</button>
+          >
+            Post tour
+          </button>
         </form>
       </main>
     );
   }
 }
 
-export default postTour;
+export default PostTour;

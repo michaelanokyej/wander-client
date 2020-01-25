@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import LandingPage from '../landingpage/LandingPage'
 import SignUp from '../signUp/SignUp'
-import postTour from "../postTour/postTour";
+import PostTour from "../postTour/PostTour";
 import Login from "../logIn/LogIn";
 import TourDetailsPage from "../tourdetails/TourDetailsPage";
 import UserProfile from "../userprofile/UserProfile";
@@ -39,7 +39,7 @@ class Mainpage extends React.Component {
         <Route
           exact
           path="/post-a-tour"
-          component={postTour}
+          component={PostTour}
         />
         <Route
           exact

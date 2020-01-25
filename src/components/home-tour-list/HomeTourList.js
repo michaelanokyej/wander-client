@@ -1,8 +1,8 @@
 import React from "react";
-import toursAndUserContext from "/Users/michael/Documents/Courses/Thinkful/projects/capstone_projects/Wander/wander-client/src/context/toursAndUserContext.js";
+import toursAndUserContext from "../context/toursAndUserContext.js";
 import "./HomeTourList.css";
 import { Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 class HomeTourList extends React.Component {
   static contextType = toursAndUserContext;
@@ -10,12 +10,12 @@ class HomeTourList extends React.Component {
     // console.log(this.context.tours);
     const tours = this.context.tours.map((tour, index) => {
       return (
-        <div className="item card" key={index}>
-          <img src={tour.img} className="tourImg card-img-top" alt="tour" />
+        <div className="item" key={index}>
+          <img src={tour.img} className="tourImg" alt="tour" />
           <div className="card-body">
             <h5 className="card-title">{tour.name}</h5>
             {/* <p className="card-text">{tour.description}</p> */}
-            <Link to={`/tours/${tour.id}`} className="btn btn-primary">
+            <Link to={`/tours/${tour.id}`} className="card-link">
               View Tour
             </Link>
           </div>

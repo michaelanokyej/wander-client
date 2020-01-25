@@ -1,6 +1,6 @@
 import React from 'react';
 import './DrawerToggleButton.css';
-import toursAndUserContext from "/Users/michael/Documents/Courses/Thinkful/projects/capstone_projects/Wander/wander-client/src/context/toursAndUserContext.js";
+import toursAndUserContext from "../context/toursAndUserContext.js";
 
 
 class DrawerToggleButton extends React.Component {

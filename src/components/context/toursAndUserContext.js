@@ -8,7 +8,10 @@ const toursAndUserContext = React.createContext({
   drawerToggleClickHandler: () => {},
   backDropClickHandler: () => {},
   deleteTour: () => {},
-  userName: ""
+  userName: "",
+  loggedIn: "",
+  userFirstName: "",
+  userLastName: ""
 });
 
 export default toursAndUserContext;

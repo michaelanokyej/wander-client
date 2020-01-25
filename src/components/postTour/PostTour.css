@@ -1,0 +1,77 @@
+/* .post-tour-body { */
+  /* height: 100vh; */
+  /* display: flex; */
+  /* justify-content: space-around; */
+  /* align-items: center; */
+  /* flex-direction: column;
+  font-family: sans-serif; */
+/* } */
+
+.div_form {
+  width: 50%;
+  position: relative;
+  height: 50px;
+  margin-top: 24px;
+  overflow: hidden;
+}
+
+.div_form input {
+  width: 100%;
+  height: 100%;
+  color: #595f6e;
+  padding-top: 20px;
+  border: none;
+  outline: none;
+}
+
+.div_form label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid black;
+}
+
+.div_form label::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid #13c776;
+  transform: translateX(-100%);
+  transition: transform all 0.3s ease;
+}
+
+.content-name {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  transition: all 0.3s ease;
+  padding-left: 4px;
+}
+
+.div_form input:focus + .label-name .content-name, 
+.div_form input:valid + .label-name .content-name {
+  transform: translateY(-120%);
+  font-size: 12px;
+  color: #13c776;
+}
+
+.div_form input:focus + .label-name::after,
+ .div_form input:valid + .label-name::after {
+   transform: translateX(0%);
+ }
+
+ .post-tour-button {
+   margin-top: 16px;
+ }
+
+ @media (max-width: 768px) {
+  .div_form {
+    width: 90%;
+  }
+}

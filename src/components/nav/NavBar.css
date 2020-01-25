@@ -50,6 +50,15 @@
   list-style: none;
 }
 
+.disabled {
+  pointer-events: none;
+  color: grey;
+}
+
+.disabled:hover, .disabled:active {
+  color: grey;
+}
+
 @media (max-width: 768px) {
   .toolbar_navigation_items {
     display: none;
