@@ -6,6 +6,9 @@ import toursAndUserContext from "../context/toursAndUserContext.js";
 class SideDrawer extends React.Component {
   static contextType = toursAndUserContext;
 
+  linkToProfile = `/users/${this.context.userName}`;
+
+
   render() {
     // console.log(this.context.userName);
     let drawerClasses = "side-drawer";
@@ -27,7 +30,7 @@ class SideDrawer extends React.Component {
 
               <li>
                 {" "}
-                <Link to="/users/:username">
+                <Link to={this.linkToProfile}>
                   {this.context.userName || "Profile"}
                 </Link>
               </li>

@@ -11,7 +11,7 @@ class SignUp extends React.Component {
     password: "",
     confirmPassword: "",
     routeToHome: false,
-    signUpToggle: ""
+    signUpToggle: "container"
   };
 
   static contextType = toursAndUserContext;
@@ -22,7 +22,7 @@ class SignUp extends React.Component {
 
   handleSignInToggle = () => {
     this.setState({
-      signUpToggle: ""
+      signUpToggle: "container"
     });
   };
 
@@ -128,7 +128,7 @@ class SignUp extends React.Component {
         </form>
         <div>Click <Link to="/login">here</Link> to login</div> */}
 
-        <div className={this.state.signUpToggle || "container"} id="container">
+        <div className={this.state.signUpToggle} id="container">
           <div className="form-container sign-up-container">
             <form action="#" className="signUp__signIn-form">
               <h1>Create Account</h1>

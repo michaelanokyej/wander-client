@@ -1,42 +1,43 @@
 import React from "react";
 import "./TourSearch.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 class TourSearch extends React.Component {
+  state = {
+    city: "",
+    state: ""
+  };
   render() {
-    // const element = <FontAwesomeIcon icon={faCoffee} />
     return (
       <section className="tourSearchSection">
-        <header>
-          <h3>Find a tour</h3>
-          <div className="search">
-            <div className="icon">
-              <FontAwesomeIcon icon={faSearch} />
-            </div>
-
-            <form>
-              <div className="row">
-                <div className="inputDiv">
-                  <input placeholder="city" type="text" name="city" id="city" />
-                </div>
-                <div className="inputDiv">
-                  <input
-                    placeholder="State"
-                    type="text"
-                    name="state"
-                    id="state"
-                    maxLength="2"
-                  />
-                </div>
-
-                <div className="inputDiv">
-                  <input type="submit" name="" value="Search" />
-                </div>
-              </div>
-            </form>
+        <form className="tour-search-from">
+          <div className="div_form">
+            <input
+              required
+              type="text"
+              name="city"
+              id="city"
+              onChange={e => this.setState({ city: e.target.value })}
+            />
+            <label htmlFor="city" className="label-name">
+              <span className="content-name">City</span>
+            </label>
           </div>
-        </header>
+          <div className="div_form">
+            <input
+              required
+              type="text"
+              name="state"
+              id="state"
+              onChange={e => this.setState({ state: e.target.value })}
+            />
+            <label htmlFor="state" className="label-name">
+              <span className="content-name">State</span>
+            </label>
+          </div>
+          <button className="post-tour-button" type="submit">
+            Search
+          </button>
+        </form>
       </section>
     );
   }

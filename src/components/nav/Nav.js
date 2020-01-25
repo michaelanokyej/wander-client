@@ -18,8 +18,12 @@ class NavBar extends React.Component {
   //     });
   //   }
   // }
+  // "/users/:username"
+  linkToProfile = `/users/${this.context.userName}`;
 
   render() {
+    console.log(this.linkToProfile)
+
     return (
       <header className="toolbar">
         <nav className="toolbar__navigation">
@@ -45,7 +49,7 @@ class NavBar extends React.Component {
 
                   <li>
                     {" "}
-                    <Link to="/users/:username">
+                    <Link to={this.linkToProfile}>
                       {this.context.userName || "Profile"}
                     </Link>
                   </li>
