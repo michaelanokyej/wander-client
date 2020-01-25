@@ -46,8 +46,8 @@ class App extends React.Component {
           return res.json();
         })
         .then(res => {
-          console.log("token in state", this.state.token);
-          console.log("username in state", this.state.userName);
+          // console.log("token in state", this.state.token);
+          // console.log("username in state", this.state.userName);
           this.setState({
             loggedIn: true,
             userId: res.id,
@@ -110,7 +110,7 @@ class App extends React.Component {
       email: userInfo.email,
       password: userInfo.password
     };
-    console.log(newUser);
+    // console.log(newUser);
     // Post note
     // http://localhost:8000/api/users
     fetch(`https://pacific-sands-75155.herokuapp.com/api/users`, {
@@ -166,9 +166,9 @@ class App extends React.Component {
         tokenService.create(res.token);
         this.setState({ userName: user.email, loggedIn: true });
         tokenService.storeUser(this.state.userName);
-        console.log("token", res.token);
-        console.log("token in state", this.state.token);
-        console.log("username in state", this.state.userName);
+        // console.log("token", res.token);
+        // console.log("token in state", this.state.token);
+        // console.log("username in state", this.state.userName);
 
         this.fetchTours();
       })

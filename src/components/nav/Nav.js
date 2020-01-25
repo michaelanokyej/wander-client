@@ -22,7 +22,7 @@ class NavBar extends React.Component {
   linkToProfile = `/users/${this.context.userName}`;
 
   render() {
-    console.log(this.linkToProfile)
+    // console.log(this.linkToProfile)
 
     return (
       <header className="toolbar">
