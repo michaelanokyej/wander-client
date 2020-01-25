@@ -24,8 +24,8 @@ class App extends React.Component {
   componentDidMount() {
     // console.log("component did mount email", this.state.userName)
     if (
-      typeof this.state.token !== undefined &&
-      typeof this.state.userName !== undefined
+       this.state.token !== null &&
+       this.state.userName !== null
     ) {
       const loggedInUser = {
         userName: this.state.userName
@@ -46,8 +46,8 @@ class App extends React.Component {
           return res.json();
         })
         .then(res => {
-          // console.log("token in state", this.state.token);
-          // console.log("username in state", this.state.userName);
+          console.log("token in state", this.state.token);
+          console.log("username in state", this.state.userName);
           this.setState({
             loggedIn: true,
             userId: res.id,
