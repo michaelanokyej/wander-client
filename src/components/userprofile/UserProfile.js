@@ -7,12 +7,12 @@ class UserProfile extends React.Component {
   static contextType = toursAndUserContext;
 
   render() {
-    console.log("context", this.context);
+    // console.log("context", this.context);
     return (
       <div className="card-container">
         <div className="upper-container">
           <div className="image-container">
-            <img src={ProfilePicture} alt="profile picture" />
+            <img src={ProfilePicture} alt="user" />
           </div>
         </div>
         <div className="lower-container">

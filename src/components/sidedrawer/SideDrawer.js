@@ -10,7 +10,7 @@ class SideDrawer extends React.Component {
 
 
   render() {
-    // console.log(this.context.userName);
+    // console.log(this.props.show);
     let drawerClasses = "side-drawer";
     if (this.props.show) {
       drawerClasses = "side-drawer open";
@@ -21,14 +21,20 @@ class SideDrawer extends React.Component {
         <ul>
           {this.context.loggedIn ? (
             <>
-              <li>
+              <li onClick={() => {
+                this.context.backDropClickHandler()
+              }}>
                 <Link to="/home">Home</Link>
               </li>
-              <li>
+              <li onClick={() => {
+                this.context.backDropClickHandler()
+              }}>
                 <Link to="/post-a-tour">Post Tour</Link>
               </li>
 
-              <li>
+              <li onClick={() => {
+                this.context.backDropClickHandler()
+              }}>
                 {" "}
                 <Link to={this.linkToProfile}>
                   {this.context.userName || "Profile"}

@@ -157,18 +157,17 @@ class App extends React.Component {
       body: JSON.stringify(user)
     })
       .then(res => {
-        // if(!res.ok){
-        //   return res.json().then(e => Promise.reject(e))
-        // }
+        if(!res.ok){
+          return res.json().then(e => Promise.reject(e))
+        }else{
         return res.json();
+        }
       })
       .then(res => {
         tokenService.create(res.token);
         this.setState({ userName: user.email, loggedIn: true });
         tokenService.storeUser(this.state.userName);
-        // console.log("token", res.token);
-        // console.log("token in state", this.state.token);
-        // console.log("username in state", this.state.userName);
+        
 
         this.fetchTours();
       })
