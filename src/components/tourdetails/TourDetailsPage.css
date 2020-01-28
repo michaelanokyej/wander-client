@@ -1,16 +1,3 @@
-/* .tourImage {
-  height: 300px;
-  width: 500px; 
-}
-
-.tourPage {
-  color: orange;
-}
-
-.tour__title {
-  color: orange;
-} */
-
 .tourPage {
   box-sizing: border-box;
   padding: 0;
@@ -31,13 +18,14 @@
 
 .tour__image-container img {
   width: 100%;
+  height: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.text--medium {
+.text_medium {
   font-family: "Open Sans", "sans-serif";
   font-size: 16px;
   line-height: 20px;
@@ -45,52 +33,63 @@
   color: #303032;
 }
 
-.titles {
-  font-size: 2rem;
-}
 
-.tour__info-guide__info {
-  width: 100%;
-}
-
-.tour-name {
+.tour_name-guide_name, .tour__rules{
   display: flex;
-  /* align-self: end; */
-  align-items: center;
-  padding: 8px;
-
-
-}
-
-.tour__location {
-  position: absolute;
-  left: 0px;
-  padding: 16px 8px;
-
-  border-radius: 20px;
-}
-
-.guide__info {
-  display: flex;
-  align-items: center;
-  padding: 8px;
-
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 20px;
 }
 
 .guide__img-container {
-  position: absolute;
-  right: 0px;
   padding: 8px;
 }
 
 .guide__img-container img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
 }
 
-.guide-username {
-  /* position: relative; */
-  /* right: 0px; */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.titles {
+  font-size: 2rem;
+}
+
+.tour_description{
+  border-top: 2px solid #8f8f97;
+  margin: 16px 16px;
   padding: 8px;
+}
+
+.tour__posted {
+  margin-bottom: 8px;
+}
+
+.Date{
+  padding: 5px 20px;
+   background-color: #303032;
+   color: #ecf0f1;
+   border-radius: 20px;
+}
+
+.buttons{
+  margin: 8px;
+}
+
+.buttons:hover {
+  transform: translateY(-7px);
+}
+
+@media (max-width: 560px) {
+
+  .tour_name-guide_name {
+    flex-direction: column;
+  }
 }

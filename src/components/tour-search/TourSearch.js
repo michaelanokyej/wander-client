@@ -19,7 +19,7 @@ class TourSearch extends React.Component {
     };
     return (
       <section className="tourSearchSection">
-        {this.state.routeToResultsPage && <Redirect to="/search" />}
+        {this.state.routeToResultsPage && <Redirect to="/search/tours" />}
 
         <form className="tour-search-from">
           <div className="div_form">

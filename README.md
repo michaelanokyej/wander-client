@@ -1,5 +1,8 @@
 # Wander App
-This app is to provide touring services.
+
+## Why Wander?
+
+
 
 ## Posting touring images
 Please post a link to the image on unsplash.com.<br />

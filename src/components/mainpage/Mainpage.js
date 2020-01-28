@@ -54,7 +54,7 @@ class Mainpage extends React.Component {
         />
         <Route
           exact
-          path="/search"
+          path="/search/tours"
           component={SearchResultsPage}
         />
       </main>

@@ -12,7 +12,9 @@ const toursAndUserContext = React.createContext({
   loggedIn: "",
   userFirstName: "",
   userLastName: "",
-  handleTourSearch:  () => {}
+  handleTourSearch: () => {},
+  searchresults: [],
+  searchLocation: ""
 });
 
 export default toursAndUserContext;

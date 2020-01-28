@@ -25,7 +25,7 @@ class SearchResultsPage extends React.Component {
       <div>
         <TourSearch />
         <h1>
-          Tours in 
+          Tours in {this.context.searchLocation}
         </h1>
       </div>
     );

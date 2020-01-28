@@ -18,16 +18,15 @@ class App extends React.Component {
     token: tokenService.token,
     tours: [],
     tourSearchResults: [],
-    sideDrawerOpen: false
+    sideDrawerOpen: false,
+    searchResults: [],
+    searchLocation: ""
   };
 
   // Create a componentDidMount function
   componentDidMount() {
     // console.log("component did mount email", this.state.userName)
-    if (
-       this.state.token !== null &&
-       this.state.userName !== null
-    ) {
+    if (this.state.token !== null && this.state.userName !== null) {
       const loggedInUser = {
         userName: this.state.userName
       };
@@ -72,24 +71,30 @@ class App extends React.Component {
   // Put user info in state
 
   handleTourSearch = searchInfo => {
-    console.log("search params", searchInfo)
+    console.log("search params", searchInfo);
+    const searchCity = searchInfo.city;
+    const searchState = searchInfo.state;
+    const searchStr = `${searchCity}, ${searchState}`;
+    this.setState({ searchLocation: searchStr });
+
     
-    // fetch(`http://localhost:8000/api/searchresults`, {
-    //   method: "Get",
-    //   headers: new Headers({
-    //     "Content-Type": "application/json"
-    //   }),
-    //   body: JSON.stringify(searchInfo)
-    // })
-    //   .then(res => res.json())
-    //   .then(res => {
-    //     console.log("search results", res)
-    //     this.setState({ tourSearchResults: res });
-    //   })
-    //   .catch(err => {
-    //     console.error({ err });
-    //   });
-  }
+
+    fetch(`http://localhost:8000/api/search/tours`, {
+      method: "POST",
+      headers: new Headers({
+        "Content-Type": "application/json"
+      }),
+      body: JSON.stringify(searchInfo)
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log("search results", res)
+        this.setState({ searchResults: res });
+      })
+      .catch(err => {
+        console.error({ err });
+      });
+  };
 
   // function to delete tours
   deleteTour = tourId => {
@@ -178,17 +183,16 @@ class App extends React.Component {
       body: JSON.stringify(user)
     })
       .then(res => {
-        if(!res.ok){
-          return res.json().then(e => Promise.reject(e))
-        }else{
-        return res.json();
+        if (!res.ok) {
+          return res.json().then(e => Promise.reject(e));
+        } else {
+          return res.json();
         }
       })
       .then(res => {
         tokenService.create(res.token);
         this.setState({ userName: user.email, loggedIn: true });
         tokenService.storeUser(this.state.userName);
-        
 
         this.fetchTours();
       })
@@ -272,7 +276,9 @@ class App extends React.Component {
       userName: this.state.userName,
       userFirstName: this.state.userFirstName,
       userLastName: this.state.userLastName,
-      handleTourSearch: this.handleTourSearch
+      handleTourSearch: this.handleTourSearch,
+      searchResults: this.state.searchResults,
+      searchLocation: this.state.searchLocation
     };
     return (
       <div style={{ height: "100%" }}>

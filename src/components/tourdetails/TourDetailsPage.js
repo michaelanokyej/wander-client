@@ -3,9 +3,9 @@ import React from "react";
 import { format } from "date-fns";
 import toursAndUserContext from "../context/toursAndUserContext.js";
 import ProfilePicture from "./profilePic.jpeg";
-import "./TourDetailsPage.css"
-
-// import RemoveButton from "../removebutton/RemoveButton";
+import "./TourDetailsPage.css";
+import BookTourButton from "../buttons/BookTourButton";
+import RemoveButton from "../buttons/RemoveButton";
 
 class TourDetailsPage extends React.Component {
   static contextType = toursAndUserContext;
@@ -16,6 +16,9 @@ class TourDetailsPage extends React.Component {
     // console.log("id", id)
     // console.log("context", this.context)
     console.log("selected tour", tour);
+    // const button = if (this.context.userName === tour.guide_username){
+
+    // }
 
     if (!tour) {
       return (
@@ -36,33 +39,40 @@ class TourDetailsPage extends React.Component {
             <img src={tour.img} alt="tour" />
           </div>
           <div className="tour__info-guide__info">
-            <div className="tour-name">
-              <span className="titles">{tour.name}</span>
-              <span>
-                <p className="text--medium tour__location">
-                  {tour.city}, {tour.state}
-                </p>
-              </span>
-            </div>
-            <div className="guide__info">
-              <div className="guide__img-container">
-                <img src={ProfilePicture} alt="user" />
+            <div className="tour_name-guide_name">
+              <div className="tour-name center">
+                <span className="titles">{tour.name}</span>
+                <span>
+                  <p className="text_medium tour__location">
+                    {tour.city}, {tour.state}
+                  </p>
+                </span>
               </div>
-              <div className="guide-username text--medium">{tour.guide_username}</div>
+              <div className="guide__info center">
+                <div className="guide__img-container">
+                  <img src={ProfilePicture} alt="user" />
+                </div>
+                <div className="guide-username text_medium">
+                  {tour.guide_username}
+                </div>
+              </div>
             </div>
             <div className="tour__rules">
-              <div className="text--medium">Max Tourists: {tour.max_tourists}</div>
+              <div className="text_medium center">
+                Max Tourists: {tour.max_tourists}
+              </div>
               <div className="policies">
-                <div className="titles">CHECK-IN POLICIES</div>
-                <div className="text--medium">{tour.policies}</div>
+                <div className="text_medium center">
+                  POLICIES: {tour.policies}
+                </div>
               </div>
             </div>
-            <div className="tour_description text--medium">
+            <div className="tour_description text_medium">
               {tour.description.split(/\n \r|\n/)}
             </div>
-            <div className="tour__posted text--medium">
+            <div className="tour__posted text_medium">
               Posted on{" "}
-              <span className="Date">
+              <span className="Date text_medium">
                 {format(new Date(tour.posted), "dd MMM yyyy")}
               </span>
             </div>
@@ -70,8 +80,12 @@ class TourDetailsPage extends React.Component {
           {/*
           If guide userName === to logged in userName show <RemoveButton id={tour.id} /> 
           Else show book tour*/}
+          {this.context.userName === tour.guide_username ? (
+            <RemoveButton id={tour.id} />
+          ) : (
+            <BookTourButton />
+          )}
         </div>
-        
       </section>
     );
   }
