@@ -17,6 +17,7 @@ class App extends React.Component {
     userLastName: "",
     token: tokenService.token,
     tours: [],
+    tourSearchResults: [],
     sideDrawerOpen: false
   };
 
@@ -69,6 +70,26 @@ class App extends React.Component {
   // if token is not null fetch user
   // Get api/me
   // Put user info in state
+
+  handleTourSearch = searchInfo => {
+    console.log("search params", searchInfo)
+    
+    // fetch(`http://localhost:8000/api/searchresults`, {
+    //   method: "Get",
+    //   headers: new Headers({
+    //     "Content-Type": "application/json"
+    //   }),
+    //   body: JSON.stringify(searchInfo)
+    // })
+    //   .then(res => res.json())
+    //   .then(res => {
+    //     console.log("search results", res)
+    //     this.setState({ tourSearchResults: res });
+    //   })
+    //   .catch(err => {
+    //     console.error({ err });
+    //   });
+  }
 
   // function to delete tours
   deleteTour = tourId => {
@@ -250,7 +271,8 @@ class App extends React.Component {
       deleteTour: this.deleteTour,
       userName: this.state.userName,
       userFirstName: this.state.userFirstName,
-      userLastName: this.state.userLastName
+      userLastName: this.state.userLastName,
+      handleTourSearch: this.handleTourSearch
     };
     return (
       <div style={{ height: "100%" }}>

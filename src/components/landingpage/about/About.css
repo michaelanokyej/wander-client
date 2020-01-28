@@ -1,3 +1,6 @@
-/* p {
-  color: #080257;
-} */
+.about-para {
+  background: whitesmoke;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 16px;
+}

@@ -1,14 +1,26 @@
 import React from "react";
 import "./TourSearch.css";
+import toursAndUserContext from "../context/toursAndUserContext.js";
+import { Redirect } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 class TourSearch extends React.Component {
+  static contextType = toursAndUserContext;
+
   state = {
     city: "",
-    state: ""
+    state: "",
+    routeToResultsPage: false
   };
   render() {
+    const searchInfo = {
+      city: this.state.city,
+      state: this.state.state
+    };
     return (
       <section className="tourSearchSection">
+        {this.state.routeToResultsPage && <Redirect to="/search" />}
+
         <form className="tour-search-from">
           <div className="div_form">
             <input
@@ -34,8 +46,18 @@ class TourSearch extends React.Component {
               <span className="content-name">State</span>
             </label>
           </div>
-          <button className="post-tour-button" type="submit">
-            Search
+          <button
+            className="post-tour-button"
+            type="submit"
+            onClick={e => {
+              e.preventDefault();
+              this.context.handleTourSearch(searchInfo);
+              this.setState({
+                routeToResultsPage: true
+              });
+            }}
+          >
+            Search Tours
           </button>
         </form>
       </section>

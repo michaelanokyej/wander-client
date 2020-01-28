@@ -7,6 +7,7 @@ import Login from "../logIn/LogIn";
 import TourDetailsPage from "../tourdetails/TourDetailsPage";
 import UserProfile from "../userprofile/UserProfile";
 import NewHomePage from "../newhomepage/NewHomePage.js";
+import SearchResultsPage from "../searchresults/SearchResultsPage";
 import "./Mainpage.css"
 
 
@@ -50,6 +51,11 @@ class Mainpage extends React.Component {
           exact
           path="/tours/:tourId"
           component={TourDetailsPage}
+        />
+        <Route
+          exact
+          path="/search"
+          component={SearchResultsPage}
         />
       </main>
     );

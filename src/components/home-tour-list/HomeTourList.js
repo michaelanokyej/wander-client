@@ -10,22 +10,39 @@ class HomeTourList extends React.Component {
     // console.log(this.context.tours);
     const tours = this.context.tours.map((tour, index) => {
       return (
-        <div className="item" key={index}>
-          <img src={tour.img} className="tourImg" alt="tour" />
-          <div className="card-body">
-            <h5 className="card-title">{tour.name}</h5>
-            {/* <p className="card-text">{tour.description}</p> */}
-            <Link to={`/tours/${tour.id}`} className="card-link">
-              View Tour
-            </Link>
+        // <div className="item" key={index}>
+        //   <img src={tour.img} className="tourImg" alt="tour" />
+        //   <div className="card-body">
+        //     <h5 className="card-title">{tour.name}</h5>
+        //     <Link to={`/tours/${tour.id}`} className="card-link">
+        //       View Tour
+        //     </Link>
+        //   </div>
+        // </div>
+        <div className="cards" key={index}>
+          <div className="card">
+            <div className="card__img-container">
+              <Link to={`/tours/${tour.id}`}>
+                <img src={tour.img} alt="tour" />
+              </Link>
+            </div>
+            <div className="card__content">
+              <p className="card__title text--medium">{tour.name}</p>
+              <div className="card__info">
+                <p className="text--medium">{tour.state}</p>
+                <Link to={`/tours/${tour.id}`}>
+                  <p className="card__price text--medium">View</p>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       );
     });
     return (
       <section className="tourListSection">
-        <h4>Browse tours in the United States</h4>
-        <div className="wrapper">{tours}</div>
+        <h4 className="homeTourHeader">Browse tours in the United States</h4>
+        <div className="wrapper cards">{tours}</div>
       </section>
     );
   }
