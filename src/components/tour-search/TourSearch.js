@@ -2,8 +2,6 @@ import React from "react";
 import "./TourSearch.css";
 import toursAndUserContext from "../context/toursAndUserContext.js";
 import { Redirect } from "react-router-dom";
-// import { Link } from "react-router-dom";
-
 class TourSearch extends React.Component {
   static contextType = toursAndUserContext;
 

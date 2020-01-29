@@ -42,7 +42,6 @@ class PostTour extends React.Component {
               type="text"
               name="name"
               id="name"
-              // placeholder="White House Tour"
               onChange={e => this.setState({ name: e.target.value })}
             />
             <label htmlFor="name" className="label-name">
@@ -52,7 +51,6 @@ class PostTour extends React.Component {
           <div className="div_form">
             <input
               required
-              // placeholder="Washington"
               type="text"
               name="city"
               id="city"
@@ -68,7 +66,6 @@ class PostTour extends React.Component {
               type="text"
               name="state"
               id="state"
-              // placeholder="DC"
               maxLength="2"
               onChange={e => this.setState({ state: e.target.value })}
             />
@@ -79,7 +76,6 @@ class PostTour extends React.Component {
           <div className="div_form">
             <input
               required
-              // placeholder="link to image"
               type="text"
               name="img"
               id="img"
@@ -95,7 +91,6 @@ class PostTour extends React.Component {
               type="number"
               name="max_tourists"
               id="max_tourists"
-              // placeholder="1"
               onChange={e => this.setState({ max_tourists: e.target.value })}
             />
             <label htmlFor="max_tourists" className="label-name">
@@ -108,7 +103,6 @@ class PostTour extends React.Component {
               type="text"
               name="policies"
               id="policies"
-              // placeholder="Check in 30 minutes before tour start"
               onChange={e => this.setState({ policies: e.target.value })}
             />
             <label htmlFor="policies" className="label-name">
@@ -118,11 +112,8 @@ class PostTour extends React.Component {
           <div className="div_form">
             <input
               required
-              // rows="2"
-              // cols="22"
               name="description"
               id="description"
-              // placeholder="say something about tour"
               onChange={e => this.setState({ description: e.target.value })}
             />
             <label htmlFor="description" className="label-name">
@@ -135,7 +126,6 @@ class PostTour extends React.Component {
               type="email"
               name="guide_username"
               id="guide_username"
-              // placeholder="username/email"
               onChange={e => this.setState({ guide_username: e.target.value })}
             />
             <label htmlFor="guide_username" className="label-name">
@@ -143,11 +133,10 @@ class PostTour extends React.Component {
             </label>
           </div>
           <button
-          className="post-tour-button"
+            className="post-tour-button"
             type="submit"
             onClick={e => {
               e.preventDefault();
-              // console.log("user info f_name", tourInfo.f_name)
               if (tourInfo.name.length === 0) {
                 window.alert("tour name cannot be empty");
               } else if (tourInfo.city.length === 0) {

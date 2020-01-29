@@ -33,8 +33,8 @@
   color: #303032;
 }
 
-
-.tour_name-guide_name, .tour__rules{
+.tour_name-guide_name,
+.tour__rules {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -62,7 +62,7 @@
   font-size: 2rem;
 }
 
-.tour_description{
+.tour_description {
   border-top: 2px solid #8f8f97;
   margin: 16px 16px;
   padding: 8px;
@@ -72,14 +72,14 @@
   margin-bottom: 8px;
 }
 
-.Date{
+.Date {
   padding: 5px 20px;
-   background-color: #303032;
-   color: #ecf0f1;
-   border-radius: 20px;
+  background-color: #303032;
+  color: #ecf0f1;
+  border-radius: 20px;
 }
 
-.buttons{
+.buttons {
   margin: 8px;
 }
 
@@ -88,7 +88,6 @@
 }
 
 @media (max-width: 560px) {
-
   .tour_name-guide_name {
     flex-direction: column;
   }

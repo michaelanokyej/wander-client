@@ -1,12 +1,11 @@
-import React from 'react'
+import React from "react";
 import toursAndUserContext from "../context/toursAndUserContext.js";
 import { Link } from "react-router-dom";
-
 
 class RemoveButton extends React.Component {
   static contextType = toursAndUserContext;
 
-  render () {
+  render() {
     const id = this.props.id;
 
     return (
@@ -19,7 +18,7 @@ class RemoveButton extends React.Component {
       >
         <Link to="/">remove</Link>
       </button>
-    )
+    );
   }
 }
 

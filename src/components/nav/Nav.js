@@ -7,29 +7,12 @@ import toursAndUserContext from "../context/toursAndUserContext.js";
 class NavBar extends React.Component {
   static contextType = toursAndUserContext;
 
-  // state = {
-  //   disabled: ""
-  // }
-
-  // disableLink = () => {
-  //   if(!this.context.loggedIn) {
-  //     this.setState({
-  //       disabled: "disabled"
-  //     });
-  //   }
-  // }
-  // "/users/:username"
   linkToProfile = `/users/${this.context.userName}`;
 
   render() {
-    // console.log(this.linkToProfile)
-
     return (
       <header className="toolbar">
         <nav className="toolbar__navigation">
-          {/* <div className="toolbar__toggle-button">
-            <DrawerToggleButton click={this.props.drawerClickHandler}/>
-          </div> */}
           <div className="toolbar__logo">
             <Link to="/">
               <img src="IMG_2340.png" alt="logo" />

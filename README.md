@@ -2,47 +2,53 @@
 
 ## Why Wander?
 
+> Traveling within the same country or to a foreign country for the
+> first time can be extremely challenging; where to go, how to get
+> there, what to eat, hot places to visit of historical significance or
+> contemporary architecture; how safe to travel alone-avoiding high
+> security risk zones, the local language, and culture etc.
+> This guide app looks to solve all this by connecting users to
+> dedicated professionals, screened and trained guide for every trip.
+> Users can choose a guide based on their ratings and expertise of all
+> available professionally profiled local guides at any given
+> destination. Best places to visit are curated for the pleasure of the
+> tourists. Ratings and comments for places visited, guides after each
+> trip is used to improve our service . Guides can also rate users after trips.
+> So whether you're traveling to your home state within the US or to
+> another state or to the Middle East or Africa; you should wear the
+> same confidence!
 
+#### Technology Used
 
-## Posting touring images
-Please post a link to the image on unsplash.com.<br />
-Take the image id eg id for https://unsplash.com/photos/oN_cUY1v7hs<br />
-is oN_cUY1v7hs and it to https://source.unsplash.com/.<br />
-Post this link in the tour image input.
+> React, JavaScript, CSS, Enzyme, Jest, NPM, RESTFul API
+> [Try out Wander](https://wander-client.michaelanokyej.now.sh/ "Link to Wander App Landing page").
 
-## Available Scripts
+## Welcome Screen
 
-In the project directory, you can run:
+> Wander welcomes you with a screen where you can easily browse through all posted tours in the USA.
+> > ![Wander Landing Screen](src/landingPage.png "Wander Landingpage screenshot")
 
-### `npm start`
+### Sign up
 
-Runs the app in the development mode.<br />
+> Easily sign up if you are new to the platform or sign in if you are already a user; all in one place.
+> ![Wander Sign In and Sign Up Screen](src/sign_in_and_sign_up_page.png "Wander Sign in/ Sign up screenshot")
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Homescreen
 
-### `npm test`
+> Easily browse and search through tours. You also have a link to post a tour or your profile page.
+> ![Wander Home Screen](src/homepage.png "Wander Home screenshot")
 
-Launches the test runner in the interactive watch mode.<br />
+### Tour Screen
 
+> Easily view more details such as description and guide name about a tour.
+> ![Wander Tour Screen](src/tour_page.png "Wander Tour screenshot")
 
-### `npm run build`
+### Profile 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> Easily browse profile for profile for user information.
+> ![Wander Home Screen](src/profile_page.png "Wander Profile screenshot")
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Post Tour 
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-
-
+> Easily post a tour. Please use this test image when posting a tour https://source.unsplash.com/oN_cUY1v7hs or add any imageId from unsplash.com to https://source.unsplash.com/
+> ![Wander Post Tour Screen](src/post_tour_page.png "Wander Port Tour screenshot")

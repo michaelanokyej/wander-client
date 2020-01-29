@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 class HomeTourList extends React.Component {
   static contextType = toursAndUserContext;
   render() {
-    // console.log(this.context.tours);
     const tours = this.context.tours.map((tour, index) => {
       return (
         <div className="cards" key={index}>

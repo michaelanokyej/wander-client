@@ -1,36 +1,35 @@
 .card-container {
   width: 300px;
   height: 430px;
-  background: #FFF;
+  background: #fff;
   border-radius: 6px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0px 1px 10px 1px #000
+  box-shadow: 0px 1px 10px 1px #000;
 }
 
-.upper-container{
+.upper-container {
   height: 150px;
   background: #17cf7b;
 }
 
-.image-container{
+.image-container {
   background: whitesmoke;
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  /* padding: 5px; */
-  transform: translate(100px,100px)
+  transform: translate(100px, 100px);
 }
 
-.image-container img{
+.image-container img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
 }
 
-.lower-container{
+.lower-container {
   height: 280px;
   background: rgb(0, 217, 255);
 }

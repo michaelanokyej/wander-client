@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import { format } from "date-fns";
 import toursAndUserContext from "../context/toursAndUserContext.js";
 import ProfilePicture from "./profilePic.jpeg";
@@ -13,12 +12,6 @@ class TourDetailsPage extends React.Component {
   render() {
     const id = this.props.match.params.tourId;
     const tour = this.context.tours.find(el => el.id === id);
-    // console.log("id", id)
-    // console.log("context", this.context)
-    console.log("selected tour", tour);
-    // const button = if (this.context.userName === tour.guide_username){
-
-    // }
 
     if (!tour) {
       return (
@@ -30,11 +23,6 @@ class TourDetailsPage extends React.Component {
     return (
       <section className="tourPage">
         <div className="tour">
-          {/* <div className="tour__title">
-          <h2 >
-            <Link to={`/tours/${tour.id}`}>{tour.name}</Link>
-          </h2>
-          </div>  */}
           <div className="tour__image-container">
             <img src={tour.img} alt="tour" />
           </div>
@@ -77,9 +65,6 @@ class TourDetailsPage extends React.Component {
               </span>
             </div>
           </div>
-          {/*
-          If guide userName === to logged in userName show <RemoveButton id={tour.id} /> 
-          Else show book tour*/}
           {this.context.userName === tour.guide_username ? (
             <RemoveButton id={tour.id} />
           ) : (

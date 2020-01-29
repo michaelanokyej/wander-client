@@ -1,7 +1,6 @@
 import React from "react";
-import TourSearch from '../tour-search/TourSearch'
-import HomeTourList from '../home-tour-list/HomeTourList'
-// import Footer from '../footer/Footer'
+import TourSearch from "../tour-search/TourSearch";
+import HomeTourList from "../home-tour-list/HomeTourList";
 
 class NewHomePage extends React.Component {
   render() {

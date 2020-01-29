@@ -7,7 +7,6 @@ class UserProfile extends React.Component {
   static contextType = toursAndUserContext;
 
   render() {
-    // console.log("context", this.context);
     return (
       <div className="card-container">
         <div className="upper-container">

@@ -5,9 +5,12 @@ import toursAndUserContext from "../context/toursAndUserContext.js";
 class BackDrop extends React.Component {
   static contextType = toursAndUserContext;
 
-  render(){
+  render() {
     return (
-      <div className="backdrop" onClick={e => this.context.backDropClickHandler()}/>
+      <div
+        className="backdrop"
+        onClick={e => this.context.backDropClickHandler()}
+      />
     );
   }
 }
