@@ -75,11 +75,11 @@ class App extends React.Component {
     const searchCity = searchInfo.city;
     const searchState = searchInfo.state;
     const searchStr = `${searchCity}, ${searchState}`;
-    this.setState({ searchLocation: searchStr });
+    this.setState({ searchLocation: searchStr.toUpperCase() });
 
     
 
-    fetch(`http://localhost:8000/api/search/tours`, {
+    fetch(`https://pacific-sands-75155.herokuapp.com/api/search/tours`, {
       method: "POST",
       headers: new Headers({
         "Content-Type": "application/json"
