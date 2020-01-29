@@ -26,7 +26,7 @@
 ## Welcome Screen
 
 > Wander welcomes you with a screen where you can easily browse through all posted tours in the USA.
-> > ![Wander Landing Screen](src/landingPage.png "Wander Landingpage screenshot")
+> ![Wander Landing Screen](src/landingPage.png "Wander Landingpage screenshot")
 
 ### Sign up
 
