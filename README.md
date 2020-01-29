@@ -23,7 +23,7 @@
 > React, JavaScript, CSS, Enzyme, Jest, NPM, RESTFul API
 > [Try out Wander](https://wander-client.michaelanokyej.now.sh/ "Link to Wander App Landing page").
 
-## Welcome Screen
+### Welcome Screen
 
 > Wander welcomes you with a screen where you can easily browse through all posted tours in the USA.
 > > ![Wander Landing Screen](src/landingPage.png "Wander Landingpage screenshot")
