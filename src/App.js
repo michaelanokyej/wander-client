@@ -55,6 +55,46 @@ class App extends React.Component {
     }
   }
 
+  handleProfileLink = () => {
+        const loggedInUser = {
+          userName: this.state.userName
+        }
+
+        fetch(`https://pacific-sands-75155.herokuapp.com/api/auth/`, {
+          method: "POST",
+          headers: new Headers({
+            "Content-Type": "application/json"
+          }),
+          body: JSON.stringify(loggedInUser)
+        })
+          .then(res => {
+            return res.json();
+          })
+          .then(res => {
+            this.setState({
+              loggedIn: true,
+              userId: res.id,
+              userLastName: res.lastName,
+              userFirstName: res.firstName
+            });
+            this.fetchTours();
+          })
+          .catch(err => {
+            console.error({ err });
+          });
+  }
+
+  handleSignOut = () => {
+    tokenService.remove();
+    this.setState({
+      loggedIn: false,
+      userId: "",
+      userLastName: "",
+      userFirstName: ""
+    });
+    this.fetchTours();
+  };
+
   handleTourSearch = searchInfo => {
     console.log("search params", searchInfo);
     const searchCity = searchInfo.city;
@@ -236,7 +276,9 @@ class App extends React.Component {
       userLastName: this.state.userLastName,
       handleTourSearch: this.handleTourSearch,
       searchResults: this.state.searchResults,
-      searchLocation: this.state.searchLocation
+      searchLocation: this.state.searchLocation,
+      handleSignOut: this.handleSignOut,
+      handleProfileLink: this.handleProfileLink
     };
     return (
       <div style={{ height: "100%" }}>

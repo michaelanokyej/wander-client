@@ -5,6 +5,7 @@ import ProfilePicture from "./profilePic.jpeg";
 import "./TourDetailsPage.css";
 import BookTourButton from "../buttons/BookTourButton";
 import RemoveButton from "../buttons/RemoveButton";
+import NotSignedInButton from "../buttons/NotSignedInButton";
 
 class TourDetailsPage extends React.Component {
   static contextType = toursAndUserContext;
@@ -65,11 +66,11 @@ class TourDetailsPage extends React.Component {
               </span>
             </div>
           </div>
-          {this.context.userName === tour.guide_username ? (
+          {!this.context.loggedIn ? <NotSignedInButton /> : (this.context.userName === tour.guide_username ? (
             <RemoveButton id={tour.id} />
           ) : (
             <BookTourButton />
-          )}
+          ))}
         </div>
       </section>
     );

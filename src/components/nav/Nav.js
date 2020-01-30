@@ -30,11 +30,15 @@ class NavBar extends React.Component {
                     <Link to="/post-a-tour">Post Tour</Link>
                   </li>
 
-                  <li>
+                  <li onClick={this.context.handleProfileLink}>
                     {" "}
                     <Link to={this.linkToProfile}>
                       {this.context.userName || "Profile"}
                     </Link>
+                  </li>
+                  <li onClick={this.context.handleSignOut}>
+                    {" "}
+                    <Link to="/">Sign out</Link>
                   </li>
                 </>
               ) : (

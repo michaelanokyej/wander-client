@@ -10,13 +10,13 @@ class SearchResultsPage extends React.Component {
   render() {
     const results = this.context.searchResults;
 
-    if(results.length === 0){
-      return (
-        <div>
-          <h1>Error: There was an issue with your search request</h1>
-        </div>
-      );
-    }
+    // if(results.length === 0){
+    //   return (
+    //     <div>
+    //       <h1>Error: There was an issue with your search request</h1>
+    //     </div>
+    //   );
+    // }
 
     const tours = this.context.searchResults.map((tour, index) => {
       return (
@@ -44,10 +44,17 @@ class SearchResultsPage extends React.Component {
     return (
       <div>
         <TourSearch />
+        {results.length === 0 ? (<h1>
+          NO TOURS FOUND IN {this.context.searchLocation}
+        </h1>) : (
+        <>
         <h1>
           TOURS IN {this.context.searchLocation}
         </h1>
         <div className="wrapper cards">{tours}</div>
+        </>
+        )}
+        
       </div>
     );
   }

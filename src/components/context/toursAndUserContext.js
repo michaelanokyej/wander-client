@@ -14,7 +14,9 @@ const toursAndUserContext = React.createContext({
   userLastName: "",
   handleTourSearch: () => {},
   searchresults: [],
-  searchLocation: ""
+  searchLocation: "",
+  handleSignOut: () => {},
+  handleProfileLink: () => {}
 });
 
 export default toursAndUserContext;
