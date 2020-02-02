@@ -15,8 +15,8 @@ class About extends React.Component {
         </p>
 
         <p className="about-para">
-          This guide app looks to solve all this by connecting users to
-          dedicated professionals, screened and trained guide for every trip.{" "}
+          This guide app looks to solve all these by connecting users to
+          dedicated Professionals, screened and Trained Guides for every trip.{" "}
         </p>
 
         <p className="about-para">
@@ -31,7 +31,7 @@ class About extends React.Component {
 
         <p className="about-para">
           So whether you're traveling to your home state within the US or to
-          another state or to the Middle East or Africa; you should wear the
+          another state or to the Middle East, Africa or any part of the world; you should wear the
           same confidence!{" "}
         </p>
       </section>

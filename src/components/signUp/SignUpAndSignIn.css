@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.signUp__signIn {
+main.signUp__signIn {
   background: #f6f5f7;
   display: flex;
   justify-content: center;

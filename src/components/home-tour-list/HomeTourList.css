@@ -29,7 +29,7 @@ div.wrapper {
   font-size: 2rem;
 }
 
-.card {
+div.card {
   grid-column-end: span 4;
   display: flex;
   flex-direction: column;

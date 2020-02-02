@@ -69,7 +69,7 @@ class TourDetailsPage extends React.Component {
           {!this.context.loggedIn ? <NotSignedInButton /> : (this.context.userName === tour.guide_username ? (
             <RemoveButton id={tour.id} />
           ) : (
-            <BookTourButton />
+            <BookTourButton tour={tour}/>
           ))}
         </div>
       </section>

@@ -5,11 +5,11 @@ import "./SignUpAndSignIn.css";
 
 class SignUp extends React.Component {
   state = {
+    user_name: "",
     firstName: "",
     lastName: "",
     email: "",
     password: "",
-    confirmPassword: "",
     routeToHome: false,
     signUpToggle: "container"
   };
@@ -28,11 +28,11 @@ class SignUp extends React.Component {
 
   render() {
     const userInfo = {
+      userName: this.state.user_name,
       f_name: this.state.firstName,
       l_name: this.state.lastName,
       email: this.state.email,
       password: this.state.password,
-      confirmPassword: this.state.confirmPassword
     };
 
     return (
@@ -72,10 +72,17 @@ class SignUp extends React.Component {
               />
               <input
                 type="email"
-                name="username"
-                id="username"
+                name="email"
+                id="email"
                 placeholder="Email"
                 onChange={e => this.setState({ email: e.target.value })}
+              />
+              <input
+                type="username"
+                name="username"
+                id="username"
+                placeholder="username"
+                onChange={e => this.setState({ user_name: e.target.value })}
               />
               <input
                 type="password"
@@ -100,8 +107,8 @@ class SignUp extends React.Component {
               <h1>Sign in</h1>
               <input
                 type="email"
-                name="username"
-                id="username"
+                name="email"
+                id="email"
                 placeholder="Email"
                 onChange={e => this.setState({ email: e.target.value })}
               />
@@ -119,6 +126,7 @@ class SignUp extends React.Component {
                     email: this.state.email,
                     password: this.state.password
                   };
+                  console.log(loginInfo)
                   this.context.logIn(loginInfo);
                   this.setState({ routeToHome: this.context.loggedIn });
                 }}

@@ -6,12 +6,14 @@ import SideDrawer from "./components/sidedrawer/SideDrawer";
 import BackDrop from "./components/backdrop/BackDrop";
 import Footer from "./components/footer/Footer";
 import { tokenService } from "./components/TokenService";
+import { format } from "date-fns";
 import "./App.css";
 
 class App extends React.Component {
   state = {
     loggedIn: false,
     userId: "",
+    userEmail: "",
     userName: tokenService.userName,
     userFirstName: "",
     userLastName: "",
@@ -24,11 +26,14 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    console.log(this.state.userName);
     if (this.state.token !== null && this.state.userName !== null) {
       const loggedInUser = {
         userName: this.state.userName
       };
-      fetch(`https://pacific-sands-75155.herokuapp.com/api/auth/`, {
+      // https://pacific-sands-75155.herokuapp.com/api/auth/
+
+      fetch(`http://localhost:8000/api/auth/`, {
         method: "POST",
         headers: new Headers({
           "Content-Type": "application/json"
@@ -43,8 +48,12 @@ class App extends React.Component {
             loggedIn: true,
             userId: res.id,
             userLastName: res.lastName,
-            userFirstName: res.firstName
+            userFirstName: res.firstName,
+            userName: res.userName,
+            userEmail: res.useremail
           });
+          console.log(res)
+          console.log(this.state.userEmail)
           this.fetchTours();
         })
         .catch(err => {
@@ -56,33 +65,34 @@ class App extends React.Component {
   }
 
   handleProfileLink = () => {
-        const loggedInUser = {
-          userName: this.state.userName
-        }
+    const loggedInUser = {
+      userName: this.state.userName
+    };
 
-        fetch(`https://pacific-sands-75155.herokuapp.com/api/auth/`, {
-          method: "POST",
-          headers: new Headers({
-            "Content-Type": "application/json"
-          }),
-          body: JSON.stringify(loggedInUser)
-        })
-          .then(res => {
-            return res.json();
-          })
-          .then(res => {
-            this.setState({
-              loggedIn: true,
-              userId: res.id,
-              userLastName: res.lastName,
-              userFirstName: res.firstName
-            });
-            this.fetchTours();
-          })
-          .catch(err => {
-            console.error({ err });
-          });
-  }
+    // https://pacific-sands-75155.herokuapp.com/api/auth/
+    fetch(`http://localhost:8000/api/auth/`, {
+      method: "POST",
+      headers: new Headers({
+        "Content-Type": "application/json"
+      }),
+      body: JSON.stringify(loggedInUser)
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(res => {
+        this.setState({
+          loggedIn: true,
+          userId: res.id,
+          userLastName: res.lastName,
+          userFirstName: res.firstName
+        });
+        this.fetchTours();
+      })
+      .catch(err => {
+        console.error({ err });
+      });
+  };
 
   handleSignOut = () => {
     tokenService.remove();
@@ -113,6 +123,51 @@ class App extends React.Component {
       .then(res => {
         console.log("search results", res);
         this.setState({ searchResults: res });
+      })
+      .catch(err => {
+        console.error({ err });
+      });
+  };
+
+  handleBooking = bookingInfo => {
+    const userId = this.state.userId;
+    const guideId = bookingInfo.guide_id;
+    const tourId = bookingInfo.tour_id;
+    const tourName = bookingInfo.tour_name;
+    const check_in = format(new Date(bookingInfo.startDate._d), "dd MMM yyyy");
+    const check_out = format(new Date(bookingInfo.endDate._d), "dd MMM yyyy");
+    const bookingToBePosted = {
+      tour_id: tourId,
+      tour_name: tourName,
+      user_id: userId,
+      guide_id: guideId,
+      checkin: check_in,
+      checkout: check_out
+    };
+    console.log("params:", bookingInfo);
+    console.log("tourId:", tourId);
+    console.log("tourName:", tourName);
+    console.log("checkIn:", check_in);
+    console.log("checkOut:", check_out);
+    console.log("user_id:", userId);
+    console.log("guide_id:", guideId);
+    console.log("toBePosted:", bookingToBePosted);
+    // window.alert("Your Tour has been booked!");
+
+    fetch(`http://localhost:8000/api/bookings`, {
+      method: "POST",
+      headers: new Headers({
+        "Content-Type": "application/json"
+      }),
+      body: JSON.stringify(bookingToBePosted)
+    })
+      .then(res => {
+        console.log(res)
+        if (!res.ok) {
+          return res.json().then(e => Promise.reject(e));
+        }
+        window.alert(`You have been booked for ${bookingToBePosted.tour_name}!`);
+        this.fetchTours();
       })
       .catch(err => {
         console.error({ err });
@@ -151,12 +206,15 @@ class App extends React.Component {
 
   signUp = userInfo => {
     const newUser = {
+      username: userInfo.userName,
       f_name: userInfo.f_name,
       l_name: userInfo.l_name,
       email: userInfo.email,
       password: userInfo.password
     };
-    fetch(`https://pacific-sands-75155.herokuapp.com/api/users`, {
+    // https://pacific-sands-75155.herokuapp.com/api/users
+
+    fetch(`http://localhost:8000/api/users`, {
       method: "POST",
       headers: new Headers({
         "Content-Type": "application/json"
@@ -167,7 +225,9 @@ class App extends React.Component {
         return res.json();
       })
       .then(res => {
+        console.log(res);
         const user = {
+          user_name: res.username,
           email: res.email,
           password: res.password
         };
@@ -180,11 +240,15 @@ class App extends React.Component {
   };
 
   logIn = userInfo => {
+    console.log(userInfo);
     const user = {
+      username: userInfo.user_name,
       email: userInfo.email,
       password: userInfo.password
     };
-    fetch(`https://pacific-sands-75155.herokuapp.com/api/auth/login`, {
+    // http://localhost:8000/api/users
+    // https://pacific-sands-75155.herokuapp.com/api/auth/login
+    fetch(`http://localhost:8000/api/auth/login`, {
       method: "POST",
       headers: new Headers({
         "Content-Type": "application/json"
@@ -200,9 +264,13 @@ class App extends React.Component {
       })
       .then(res => {
         tokenService.create(res.token);
-        this.setState({ userName: user.email, loggedIn: true });
-        tokenService.storeUser(this.state.userName);
-
+        tokenService.storeUser(res.username);
+        this.setState({
+          userId: res.id,
+          userName: res.username,
+          userEmail: res.email,
+          loggedIn: true
+        });
         this.fetchTours();
       })
       .catch(err => {
@@ -212,16 +280,21 @@ class App extends React.Component {
 
   postTour = tourInfo => {
     const newTour = {
-      name: tourInfo.name,
-      city: tourInfo.city,
-      state: tourInfo.state,
+      name: tourInfo.name.toUpperCase(),
+      city: tourInfo.city.toUpperCase(),
+      state: tourInfo.state.toUpperCase(),
       description: tourInfo.description,
       max_tourists: tourInfo.max_tourists,
       img: tourInfo.img,
       policies: tourInfo.policies,
-      guide_username: tourInfo.guide_username
+      // guide_username: tourInfo.guide_username
+      guide_id: this.state.userId,
+      guide_username: this.state.userName,
+      guide_email: this.state.userEmail
     };
-    fetch(`https://pacific-sands-75155.herokuapp.com/api/tours`, {
+
+    // https://pacific-sands-75155.herokuapp.com/api/tours
+    fetch(`http://localhost:8000/api/tours`, {
       method: "POST",
       headers: new Headers({
         "Content-Type": "application/json"
@@ -240,7 +313,8 @@ class App extends React.Component {
   };
 
   fetchTours = () => {
-    fetch(`https://pacific-sands-75155.herokuapp.com/api/tours`, {
+    // https://pacific-sands-75155.herokuapp.com/api/tours
+    fetch(`http://localhost:8000/api/tours`, {
       method: "Get",
       headers: new Headers({
         "Content-Type": "application/json"
@@ -278,7 +352,8 @@ class App extends React.Component {
       searchResults: this.state.searchResults,
       searchLocation: this.state.searchLocation,
       handleSignOut: this.handleSignOut,
-      handleProfileLink: this.handleProfileLink
+      handleProfileLink: this.handleProfileLink,
+      handleBooking: this.handleBooking
     };
     return (
       <div style={{ height: "100%" }}>

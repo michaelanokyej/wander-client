@@ -120,7 +120,7 @@ class PostTour extends React.Component {
               <span className="content-name">Tour Description</span>
             </label>
           </div>
-          <div className="div_form">
+          {/* <div className="div_form">
             <input
               required
               type="email"
@@ -131,7 +131,7 @@ class PostTour extends React.Component {
             <label htmlFor="guide_username" className="label-name">
               <span className="content-name">Username/Email</span>
             </label>
-          </div>
+          </div> */}
           <button
             className="post-tour-button"
             type="submit"
@@ -151,9 +151,11 @@ class PostTour extends React.Component {
                 window.alert("Tour image cannot be empty");
               } else if (tourInfo.policies.length === 0) {
                 window.alert("Tour policies must be entered");
-              } else if (tourInfo.guide_username.length === 0) {
-                window.alert("guide username must be entered");
-              } else {
+              } 
+              // else if (tourInfo.guide_username.length === 0) {
+              //   window.alert("guide username must be entered");
+              // }
+               else {
                 this.context.postTour(tourInfo);
                 this.setState({ routeToHome: true });
               }
