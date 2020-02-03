@@ -32,7 +32,7 @@ class SignUp extends React.Component {
       f_name: this.state.firstName,
       l_name: this.state.lastName,
       email: this.state.email,
-      password: this.state.password,
+      password: this.state.password
     };
 
     return (
@@ -126,7 +126,6 @@ class SignUp extends React.Component {
                     email: this.state.email,
                     password: this.state.password
                   };
-                  console.log(loginInfo)
                   this.context.logIn(loginInfo);
                   this.setState({ routeToHome: this.context.loggedIn });
                 }}
