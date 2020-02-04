@@ -30,7 +30,8 @@ class App extends React.Component {
       const loggedInUser = {
         userName: this.state.userName
       };
-
+      // https://pacific-sands-75155.herokuapp.com/api/auth/ 
+      // http://localhost:8000/api 
       fetch(`https://pacific-sands-75155.herokuapp.com/api/auth/`, {
         method: "POST",
         headers: new Headers({
@@ -194,8 +195,6 @@ class App extends React.Component {
       email: userInfo.email,
       password: userInfo.password
     };
-    // https://pacific-sands-75155.herokuapp.com/api/users
-
     fetch(`https://pacific-sands-75155.herokuapp.com/api/users`, {
       method: "POST",
       headers: new Headers({
@@ -226,8 +225,6 @@ class App extends React.Component {
       email: userInfo.email,
       password: userInfo.password
     };
-    // http://localhost:8000/api/users
-    // https://pacific-sands-75155.herokuapp.com/api/auth/login
     fetch(`https://pacific-sands-75155.herokuapp.com/api/auth/login`, {
       method: "POST",
       headers: new Headers({
@@ -267,13 +264,11 @@ class App extends React.Component {
       max_tourists: tourInfo.max_tourists,
       img: tourInfo.img,
       policies: tourInfo.policies,
-      // guide_username: tourInfo.guide_username
       guide_id: this.state.userId,
       guide_username: this.state.userName,
       guide_email: this.state.userEmail
     };
-
-    // https://pacific-sands-75155.herokuapp.com/api/tours
+    console.log(newTour)
     fetch(`https://pacific-sands-75155.herokuapp.com/api/tours`, {
       method: "POST",
       headers: new Headers({
@@ -293,7 +288,6 @@ class App extends React.Component {
   };
 
   fetchTours = () => {
-    // https://pacific-sands-75155.herokuapp.com/api/tours
     fetch(`https://pacific-sands-75155.herokuapp.com/api/tours`, {
       method: "Get",
       headers: new Headers({

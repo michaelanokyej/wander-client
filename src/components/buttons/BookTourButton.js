@@ -1,9 +1,9 @@
 import React from "react";
 import toursAndUserContext from "../context/toursAndUserContext.js";
-// import "bootstrap/dist/css/bootstrap.min.css";
 import { Redirect } from "react-router-dom";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
+import { format } from "date-fns";
 import { DateRangePicker } from "react-dates";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 
@@ -48,7 +48,7 @@ class BookTourButton extends React.Component {
           onClick={() => {
             this.context.handleBooking(bookingInfo);
             Swal.fire(
-              `CONFIRMED: You have been booked for ${tour.name} between ${this.state.startDate} and ${this.state.endDate}!`
+              `CONFIRMED: You have been booked for ${tour.name} from ${format(new Date(this.state.startDate), "dd MMM yyyy")} to ${format(new Date(this.state.endDate), "dd MMM yyyy")}!`
             );
             this.setState({ routeToHome: true });
           }}
