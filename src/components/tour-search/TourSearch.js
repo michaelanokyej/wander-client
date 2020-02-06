@@ -2,6 +2,9 @@ import React from "react";
 import "./TourSearch.css";
 import toursAndUserContext from "../context/toursAndUserContext.js";
 import { Redirect } from "react-router-dom";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
+
 class TourSearch extends React.Component {
   static contextType = toursAndUserContext;
 
@@ -49,10 +52,17 @@ class TourSearch extends React.Component {
             type="submit"
             onClick={e => {
               e.preventDefault();
-              this.context.handleTourSearch(searchInfo);
-              this.setState({
-                routeToResultsPage: true
-              });
+              if (
+                this.state.city.length !== 0 &&
+                this.state.city.length !== 0
+              ) {
+                this.context.handleTourSearch(searchInfo);
+                this.setState({
+                  routeToResultsPage: true
+                });
+              } else {
+                Swal.fire("city and state are required to search");
+              }
             }}
           >
             Search Tours

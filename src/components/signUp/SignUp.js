@@ -71,6 +71,7 @@ class SignUp extends React.Component {
                 onChange={e => this.setState({ lastName: e.target.value })}
               />
               <input
+                required
                 type="email"
                 name="email"
                 id="email"
@@ -78,6 +79,7 @@ class SignUp extends React.Component {
                 onChange={e => this.setState({ email: e.target.value })}
               />
               <input
+                required
                 type="username"
                 name="username"
                 id="username"
@@ -85,6 +87,7 @@ class SignUp extends React.Component {
                 onChange={e => this.setState({ user_name: e.target.value })}
               />
               <input
+                required
                 type="password"
                 placeholder="Password"
                 name="password"
@@ -106,16 +109,18 @@ class SignUp extends React.Component {
             <form action="#">
               <h1>Sign in</h1>
               <input
+                required
                 type="email"
                 name="email"
-                id="email"
+                id="user-signin-email"
                 placeholder="Email"
                 onChange={e => this.setState({ email: e.target.value })}
               />
               <input
+                required
                 type="password"
                 name="password"
-                id="password"
+                id="user-signin-password"
                 placeholder="Password"
                 onChange={e => this.setState({ password: e.target.value })}
               />

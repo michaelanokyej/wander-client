@@ -8,6 +8,8 @@ import Footer from "./components/footer/Footer";
 import { tokenService } from "./components/TokenService";
 import { format } from "date-fns";
 import "./App.css";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
 
 class App extends React.Component {
   state = {
@@ -30,8 +32,8 @@ class App extends React.Component {
       const loggedInUser = {
         userName: this.state.userName
       };
-      // https://pacific-sands-75155.herokuapp.com/api/auth/ 
-      // http://localhost:8000/api 
+      // https://pacific-sands-75155.herokuapp.com/api/auth/
+      // http://localhost:8000/api
       fetch(`https://pacific-sands-75155.herokuapp.com/api/auth/`, {
         method: "POST",
         headers: new Headers({
@@ -215,7 +217,8 @@ class App extends React.Component {
         this.fetchTours();
       })
       .catch(err => {
-        console.error({ err });
+        // console.error({ err });
+        Swal.fire(err.error.message);
       });
   };
 
@@ -251,7 +254,8 @@ class App extends React.Component {
         this.fetchTours();
       })
       .catch(err => {
-        console.error({ err });
+        // console.error({ err });
+        Swal.fire(err.error.message);
       });
   };
 
@@ -268,7 +272,6 @@ class App extends React.Component {
       guide_username: this.state.userName,
       guide_email: this.state.userEmail
     };
-    console.log(newTour)
     fetch(`https://pacific-sands-75155.herokuapp.com/api/tours`, {
       method: "POST",
       headers: new Headers({

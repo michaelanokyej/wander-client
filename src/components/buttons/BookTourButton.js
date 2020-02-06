@@ -6,7 +6,6 @@ import "react-dates/lib/css/_datepicker.css";
 import { format } from "date-fns";
 import { DateRangePicker } from "react-dates";
 import Swal from "sweetalert2/dist/sweetalert2.js";
-
 import "sweetalert2/src/sweetalert2.scss";
 
 class BookTourButton extends React.Component {
@@ -48,7 +47,10 @@ class BookTourButton extends React.Component {
           onClick={() => {
             this.context.handleBooking(bookingInfo);
             Swal.fire(
-              `CONFIRMED: You have been booked for ${tour.name} from ${format(new Date(this.state.startDate), "dd MMM yyyy")} to ${format(new Date(this.state.endDate), "dd MMM yyyy")}!`
+              `CONFIRMED: You have been booked for ${tour.name} from ${format(
+                new Date(this.state.startDate),
+                "dd MMM yyyy"
+              )} to ${format(new Date(this.state.endDate), "dd MMM yyyy")}!`
             );
             this.setState({ routeToHome: true });
           }}
