@@ -2,6 +2,8 @@ import React from "react";
 import toursAndUserContext from "../context/toursAndUserContext.js";
 import { Redirect } from "react-router-dom";
 import "./PostTour.css";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
 
 class PostTour extends React.Component {
   state = {
@@ -138,24 +140,20 @@ class PostTour extends React.Component {
             onClick={e => {
               e.preventDefault();
               if (tourInfo.name.length === 0) {
-                window.alert("tour name cannot be empty");
+                Swal.fire("tour name cannot be empty");
               } else if (tourInfo.city.length === 0) {
-                window.alert("tour city cannot be empty");
+                Swal.fire("tour city cannot be empty");
               } else if (tourInfo.state.length === 0) {
-                window.alert("tour state cannot be empty");
+                Swal.fire("tour state cannot be empty");
               } else if (tourInfo.description.length === 0) {
-                window.alert("tour description cannot be empty");
+                Swal.fire("tour description cannot be empty");
               } else if (tourInfo.max_tourists.length === 0) {
-                window.alert("max_tourists cannot be 0");
+                Swal.fire("max_tourists cannot be 0");
               } else if (tourInfo.img.length === 0) {
-                window.alert("Tour image cannot be empty");
+                Swal.fire("Tour image cannot be empty");
               } else if (tourInfo.policies.length === 0) {
-                window.alert("Tour policies must be entered");
-              } 
-              // else if (tourInfo.guide_username.length === 0) {
-              //   window.alert("guide username must be entered");
-              // }
-               else {
+                Swal.fire("Tour policies must be entered");
+              } else {
                 this.context.postTour(tourInfo);
                 this.setState({ routeToHome: true });
               }
