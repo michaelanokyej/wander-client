@@ -8,3 +8,9 @@
 .tour-search-from {
   background: transparent;
 }
+
+@media (max-width: 768px) {
+  .content-name, .search-input {
+    font-size: 0.5rem;
+  }
+}

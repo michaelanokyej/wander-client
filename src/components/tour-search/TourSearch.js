@@ -25,6 +25,7 @@ class TourSearch extends React.Component {
         <form className="tour-search-from">
           <div className="div_form">
             <input
+              className="search-input"
               required
               type="text"
               name="city"
@@ -37,6 +38,7 @@ class TourSearch extends React.Component {
           </div>
           <div className="div_form">
             <input
+              className="search-input"
               required
               type="text"
               name="state"
