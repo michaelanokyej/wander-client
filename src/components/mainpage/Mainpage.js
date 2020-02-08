@@ -9,7 +9,7 @@ import UserProfile from "../userprofile/UserProfile";
 import NewHomePage from "../newhomepage/NewHomePage.js";
 import SearchResultsPage from "../searchresults/SearchResultsPage";
 
-class Mainpage extends React.Component {
+class MainPage extends React.Component {
   render() {
     return (
       <main className="App__main">
@@ -26,4 +26,4 @@ class Mainpage extends React.Component {
   }
 }
 
-export default Mainpage;
+export default MainPage;

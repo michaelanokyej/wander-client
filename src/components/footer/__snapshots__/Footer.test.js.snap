@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component renders the Footer component 1`] = `
+<footer>
+  © Michael Anokye - View 
+  <a
+    href="https://github.com/michaelanokyej"
+  >
+    projects
+  </a>
+</footer>
+`;

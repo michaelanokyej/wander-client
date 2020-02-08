@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainPage component renders the MainPage component 1`] = `
+<main
+  className="App__main"
+>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/home"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/users/:userId"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/signup"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/post-a-tour"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/login"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/tours/:tourId"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/search/tours"
+  />
+</main>
+`;

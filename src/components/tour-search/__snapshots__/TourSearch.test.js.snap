@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TourSearch component renders the TourSearch component 1`] = `
+<section
+  className="tourSearchSection"
+>
+  <form
+    className="tour-search-from"
+  >
+    <div
+      className="div_form"
+    >
+      <input
+        id="city"
+        name="city"
+        onChange={[Function]}
+        required={true}
+        type="text"
+      />
+      <label
+        className="label-name"
+        htmlFor="city"
+      >
+        <span
+          className="content-name"
+        >
+          City
+        </span>
+      </label>
+    </div>
+    <div
+      className="div_form"
+    >
+      <input
+        id="state"
+        maxLength="2"
+        name="state"
+        onChange={[Function]}
+        required={true}
+        type="text"
+      />
+      <label
+        className="label-name"
+        htmlFor="state"
+      >
+        <span
+          className="content-name"
+        >
+          State
+        </span>
+      </label>
+    </div>
+    <button
+      className="post-tour-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Search Tours
+    </button>
+  </form>
+</section>
+`;

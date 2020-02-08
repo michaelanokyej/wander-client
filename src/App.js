@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "./components/nav/Nav";
-import Mainpage from "./components/mainpage/Mainpage";
+import MainPage from "./components/mainpage/MainPage";
 import toursAndUserContext from "./components/context/toursAndUserContext";
 import SideDrawer from "./components/sidedrawer/SideDrawer";
 import BackDrop from "./components/backdrop/BackDrop";
@@ -32,8 +32,7 @@ class App extends React.Component {
       const loggedInUser = {
         userName: this.state.userName
       };
-      // https://pacific-sands-75155.herokuapp.com/api/auth/
-      // http://localhost:8000/api
+
       fetch(`https://pacific-sands-75155.herokuapp.com/api/auth/`, {
         method: "POST",
         headers: new Headers({
@@ -217,7 +216,6 @@ class App extends React.Component {
         this.fetchTours();
       })
       .catch(err => {
-        // console.error({ err });
         Swal.fire(err.error.message);
       });
   };
@@ -254,7 +252,6 @@ class App extends React.Component {
         this.fetchTours();
       })
       .catch(err => {
-        // console.error({ err });
         Swal.fire(err.error.message);
       });
   };
@@ -338,7 +335,7 @@ class App extends React.Component {
           <NavBar />
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backDrop}
-          <Mainpage />
+          <MainPage />
           <Footer />
         </toursAndUserContext.Provider>
       </div>

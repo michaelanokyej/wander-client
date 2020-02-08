@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewHomePage component renders the NewHomePage component 1`] = `
+<main>
+  <TourSearch />
+  <HomeTourList />
+</main>
+`;

@@ -41,6 +41,7 @@ class TourSearch extends React.Component {
               type="text"
               name="state"
               id="state"
+              maxLength="2"
               onChange={e => this.setState({ state: e.target.value })}
             />
             <label htmlFor="state" className="label-name">
@@ -54,7 +55,7 @@ class TourSearch extends React.Component {
               e.preventDefault();
               if (
                 this.state.city.length !== 0 &&
-                this.state.city.length !== 0
+                this.state.state.length !== 0
               ) {
                 this.context.handleTourSearch(searchInfo);
                 this.setState({

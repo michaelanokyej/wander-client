@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav component renders the Nav component 1`] = `
+<header
+  className="toolbar"
+>
+  <nav
+    className="toolbar__navigation"
+  >
+    <div
+      className="toolbar__logo"
+    >
+      <Link
+        to="/"
+      >
+        <img
+          alt="logo"
+          src="IMG_2340.png"
+        />
+      </Link>
+    </div>
+    <div
+      className="spacer"
+    />
+    <div
+      className="toolbar_navigation_items"
+    >
+      <ul>
+        <li>
+          <Link
+            to="/signup"
+          >
+            Sign Up
+          </Link>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="toolbar__toggle-button"
+    >
+      <DrawerToggleButton />
+    </div>
+  </nav>
+</header>
+`;

@@ -10,7 +10,7 @@ class SignUp extends React.Component {
     lastName: "",
     email: "",
     password: "",
-    routeToHome: false,
+    // routeToHome: false,
     signUpToggle: "container"
   };
 
@@ -37,7 +37,7 @@ class SignUp extends React.Component {
 
     return (
       <main className="signUp__signIn">
-        {this.state.routeToHome && <Redirect to="/home" />}
+        {this.context.loggedIn && <Redirect to="/home" />}
         <div className={this.state.signUpToggle} id="container">
           <div className="form-container sign-up-container">
             <form action="#" className="signUp__signIn-form">
@@ -98,7 +98,7 @@ class SignUp extends React.Component {
                 onClick={e => {
                   e.preventDefault();
                   this.context.signUp(userInfo);
-                  this.setState({ routeToHome: this.context.loggedIn });
+                  // this.setState({ routeToHome: this.context.loggedIn });
                 }}
               >
                 Sign Up
@@ -132,7 +132,7 @@ class SignUp extends React.Component {
                     password: this.state.password
                   };
                   this.context.logIn(loginInfo);
-                  this.setState({ routeToHome: this.context.loggedIn });
+                  // this.setState({ routeToHome: this.context.loggedIn });
                 }}
               >
                 Sign In

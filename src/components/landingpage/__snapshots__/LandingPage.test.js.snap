@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LandingPage component renders the LandingPage component 1`] = `
+<main
+  className="landing-page"
+>
+  <div>
+    <h1>
+      Wander
+    </h1>
+    <h4>
+      Tour like a local
+    </h4>
+  </div>
+  <About />
+  <HomeTourList />
+</main>
+`;
