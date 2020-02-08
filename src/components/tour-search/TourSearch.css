@@ -9,8 +9,11 @@
   background: transparent;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 568px) {
   .content-name, .search-input {
     font-size: 0.5rem;
+  }
+  .label-name:hover, .label-name:active, .content-name:hover, .content-name:active{
+    display: none;
   }
 }
